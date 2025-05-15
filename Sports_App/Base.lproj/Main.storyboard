@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,20 +16,94 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PVI-Ak-Xyo">
+                                <rect key="frame" x="16" y="119" width="361" height="683"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iqX-AG-8U7">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sport_cell" id="mIo-f5-yYK">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Rp5-OR-iM1">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PVI-Ak-Xyo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="0NV-j6-bpU"/>
+                            <constraint firstItem="PVI-Ak-Xyo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="65v-zP-OsL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PVI-Ak-Xyo" secondAttribute="bottom" constant="16" id="hov-P6-kfm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PVI-Ak-Xyo" secondAttribute="trailing" constant="16" id="xZR-DH-LBe"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="ucF-wi-8ax"/>
+                    <connections>
+                        <outlet property="sportsCollectionView" destination="PVI-Ak-Xyo" id="isW-4Z-4b2"/>
+                        <segue destination="kXq-Mf-ttV" kind="push" id="MZi-Hr-Qyv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1011.4503816793892" y="4.9295774647887329"/>
+        </scene>
+        <!--Leagues-->
+        <scene sceneID="YGM-LQ-eTO">
+            <objects>
+                <viewController storyboardIdentifier="LeagueViewController" id="kXq-Mf-ttV" customClass="LeagueViewController" customModule="Sports_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5vH-dg-BrU">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CUQ-pz-e1v">
+                                <rect key="frame" x="16" y="119" width="361" height="683"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="CdG-7R-yK9">
+                                        <rect key="frame" x="0.0" y="50" width="361" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CdG-7R-yK9" id="tx2-43-jko">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Eo0-85-2eF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Eo0-85-2eF" firstAttribute="trailing" secondItem="CUQ-pz-e1v" secondAttribute="trailing" constant="16" id="4y2-ny-3Yn"/>
+                            <constraint firstItem="Eo0-85-2eF" firstAttribute="bottom" secondItem="CUQ-pz-e1v" secondAttribute="bottom" constant="16" id="Pya-9f-VMC"/>
+                            <constraint firstItem="CUQ-pz-e1v" firstAttribute="top" secondItem="Eo0-85-2eF" secondAttribute="top" constant="16" id="Sf3-BK-BP7"/>
+                            <constraint firstItem="CUQ-pz-e1v" firstAttribute="leading" secondItem="Eo0-85-2eF" secondAttribute="leading" constant="16" id="lDD-Z6-gjh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Leagues" id="jdn-3h-ijR"/>
+                    <connections>
+                        <outlet property="leaguesTable" destination="CUQ-pz-e1v" id="gyw-sz-DqN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f0U-8v-79A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1958.0152671755725" y="8.4507042253521139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="b45-Jz-mdU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2lb-Dc-3SI" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="EDg-kF-Lfp"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RX1-v6-4tw">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
