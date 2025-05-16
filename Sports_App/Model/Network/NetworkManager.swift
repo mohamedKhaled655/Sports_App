@@ -10,22 +10,28 @@ import Alamofire
 
 protocol NetworkProtocol {
      func fetchDataFromApi<T: Codable>(
-            endPoint: String,
+            url : String ,
             completionHandler: @escaping (T?) -> Void
         )
 }
+//protocol NetworkProtocol {
+//     func fetchDataFromApi<T: Codable>(
+//            endPoint: String,
+//            completionHandler: @escaping (T?) -> Void
+//        )
+//}
 class NetworkManager: NetworkProtocol {
     
     private let baseURL = "https://apiv2.allsportsapi.com/"
     
      func fetchDataFromApi<T: Codable>(
-        endPoint: String,
+        url : String ,
         completionHandler: @escaping (T?) -> Void
     ) {
        
-        let fullUrl = baseURL + endPoint
+//        let fullUrl = baseURL + endPoint
         
-        guard let url = URL(string: fullUrl) else {
+        guard let url = URL(string: url) else {
             print("Invalid URL")
             completionHandler(nil)
             return
@@ -49,6 +55,41 @@ class NetworkManager: NetworkProtocol {
         }
     }
 }
+//class NetworkManager: NetworkProtocol {
+//    
+//    private let baseURL = "https://apiv2.allsportsapi.com/"
+//    
+//     func fetchDataFromApi<T: Codable>(
+//        endPoint: String,
+//        completionHandler: @escaping (T?) -> Void
+//    ) {
+//       
+//        let fullUrl = baseURL + endPoint
+//        
+//        guard let url = URL(string: fullUrl) else {
+//            print("Invalid URL")
+//            completionHandler(nil)
+//            return
+//        }
+//
+//      
+//        AF.request(url).validate().responseData { response in
+//            switch response.result {
+//            case .success(let data):
+//                do {
+//                    let result = try JSONDecoder().decode(T.self, from: data)
+//                    completionHandler(result)
+//                } catch {
+//                    print("Decoding Error: \(error.localizedDescription)")
+//                    completionHandler(nil)
+//                }
+//            case .failure(let error):
+//                print("Request failed with error: \(error.localizedDescription)")
+//                completionHandler(nil)
+//            }
+//        }
+//    }
+//}
 
 //class NetworkManager: NetworkProtocol {
 //

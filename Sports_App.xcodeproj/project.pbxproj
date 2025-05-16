@@ -29,8 +29,8 @@
 		228936B72DD54AED00B00E05 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 228936B62DD54AED00B00E05 /* SDWebImage */; };
 		228936B92DD54AED00B00E05 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 228936B82DD54AED00B00E05 /* SDWebImageMapKit */; };
 		228936BC2DD54B3200B00E05 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 228936BB2DD54B3200B00E05 /* Alamofire */; };
-		228936BE2DD54B3200B00E05 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 228936BD2DD54B3200B00E05 /* AlamofireDynamic */; };
 		228936C12DD54B4500B00E05 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 228936C02DD54B4500B00E05 /* Reachability */; };
+		7BA668772DD74EAB004DBBC3 /* UrlBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA668762DD74E99004DBBC3 /* UrlBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +55,7 @@
 		228936AA2DD54A7B00B00E05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		228936AD2DD54A7B00B00E05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		228936AF2DD54A7B00B00E05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BA668762DD74E99004DBBC3 /* UrlBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +64,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				228936BC2DD54B3200B00E05 /* Alamofire in Frameworks */,
-				228936BE2DD54B3200B00E05 /* AlamofireDynamic in Frameworks */,
 				228936C12DD54B4500B00E05 /* Reachability in Frameworks */,
 				228936B92DD54AED00B00E05 /* SDWebImageMapKit in Frameworks */,
 				228936B72DD54AED00B00E05 /* SDWebImage in Frameworks */,
@@ -120,6 +120,7 @@
 		2284FE9D2DD62C8C005596BE /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				7BA668762DD74E99004DBBC3 /* UrlBuilder.swift */,
 				2284FE9E2DD62CAC005596BE /* NetworkManager.swift */,
 			);
 			path = Network;
@@ -216,7 +217,6 @@
 				228936B62DD54AED00B00E05 /* SDWebImage */,
 				228936B82DD54AED00B00E05 /* SDWebImageMapKit */,
 				228936BB2DD54B3200B00E05 /* Alamofire */,
-				228936BD2DD54B3200B00E05 /* AlamofireDynamic */,
 				228936C02DD54B4500B00E05 /* Reachability */,
 			);
 			productName = Sports_App;
@@ -287,6 +287,7 @@
 				2284FEB32DD641F5005596BE /* LeaguesViewProtocol.swift in Sources */,
 				2284FEB52DD64273005596BE /* LeaguesPresenter.swift in Sources */,
 				2289369F2DD54A7800B00E05 /* AppDelegate.swift in Sources */,
+				7BA668772DD74EAB004DBBC3 /* UrlBuilder.swift in Sources */,
 				2282E1C72DD6872700858AD9 /* SportCollectionViewCell.swift in Sources */,
 				2284FE9F2DD62CAC005596BE /* NetworkManager.swift in Sources */,
 				228936A92DD54A7800B00E05 /* Sports_App.xcdatamodeld in Sources */,
@@ -558,11 +559,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 228936BA2DD54B3200B00E05 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		228936BD2DD54B3200B00E05 /* AlamofireDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 228936BA2DD54B3200B00E05 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = AlamofireDynamic;
 		};
 		228936C02DD54B4500B00E05 /* Reachability */ = {
 			isa = XCSwiftPackageProductDependency;
