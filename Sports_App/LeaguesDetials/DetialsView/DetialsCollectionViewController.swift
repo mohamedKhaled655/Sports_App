@@ -10,15 +10,10 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class DetialsCollectionViewController: UICollectionViewController ,DetialsViewProtocol{
-    
-    func showFixture(_ fixture: [FixtureModel]) {
-        <#code#>
-    }
-    
-    func showError(_ message: String) {
-        <#code#>
-    }
-    
+    var fixtures : [FixtureModel] = []
+    var presenter : DetialsPresenter?
+    var sportName : String?
+    var leaugeId : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +23,20 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+        let networkManager = NetworkManager()
+        presenter = DetialsPresenter(view: self,networkManager: networkManager)
+        presenter?.fetchFixtures(sportName!,id: leaugeId!)
+        
     }
 
+    //MARK: - DetialsProtocol Methodes
+        func showFixture(_ fixture: [FixtureModel]) {
+            self.fixtures = fixture
+        }
+        
+        func showError(_ message: String) {
+            print("Error: \(message)")
+        }
     /*
     // MARK: - Navigation
 
