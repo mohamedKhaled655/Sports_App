@@ -46,7 +46,7 @@ class UrlSportBuilder {
             let startTime = dateFormatter.string(from: date)
             var dateComponent = DateComponents()
             dateComponent.day = 14
-            var LastTimeDate = Calendar.current.date(byAdding: dateComponent, to: date)
+            let LastTimeDate = Calendar.current.date(byAdding: dateComponent, to: date)
 
             
             let lastTime = dateFormatter.string(from: LastTimeDate!)
