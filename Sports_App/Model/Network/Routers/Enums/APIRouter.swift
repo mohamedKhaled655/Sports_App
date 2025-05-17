@@ -15,6 +15,14 @@ enum APIRouter: URLRequestBuilder {
     case getLeagues(
         params: URLRequestParams
     )
+    
+    case getStandingTeams(
+        params: URLRequestParams
+    )
+    
+    case getTeams(
+        params: URLRequestParams
+    )
 
     // MARK: - Base URL
     var baseURL: URL {
@@ -31,7 +39,9 @@ enum APIRouter: URLRequestBuilder {
     // MARK: - Path
     var path: String {
         switch self {
-        case .getFixtures(let params), .getLeagues(let params):
+        case .getFixtures(let params), .getLeagues(let params) , .getTeams(let params):
+            return "/\(params.sportType.rawValue)"
+        case .getStandingTeams(let params):
             return "/\(params.sportType.rawValue)"
         }
     }
@@ -39,7 +49,7 @@ enum APIRouter: URLRequestBuilder {
     // MARK: - HTTP Method
     var method: HTTPMethod {
         switch self {
-        case .getFixtures, .getLeagues:
+        case .getFixtures, .getLeagues , .getStandingTeams , .getTeams:
             return .get
         }
     }
@@ -52,7 +62,9 @@ enum APIRouter: URLRequestBuilder {
     // MARK: - Parameters
     var parameters: Parameters? {
         switch self {
-        case .getFixtures(let params), .getLeagues(let params):
+        case .getFixtures(let params), .getLeagues(let params) , .getTeams(let params):
+            return params.asDictionary(API_KEY: API_KEY)
+        case .getStandingTeams(let params):
             return params.asDictionary(API_KEY: API_KEY)
         }
     }

@@ -9,5 +9,6 @@ import Foundation
 
 protocol DetialsViewProtocol{
     func showFixture(_ fixture: [FixtureModel] )
+    func showStanding(_ standingTeams: [TeamStanding] )
     func showError(_ message: String)
 }

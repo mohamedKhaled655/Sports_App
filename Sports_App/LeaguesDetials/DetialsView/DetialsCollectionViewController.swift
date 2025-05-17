@@ -10,7 +10,10 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class DetialsCollectionViewController: UICollectionViewController ,DetialsViewProtocol{
+   
+    
     var fixtures : [FixtureModel] = []
+    var standingTeams : [TeamStanding] = []
     var presenter : DetialsPresenter?
     var sportName : String?
     var leaugeId : Int?
@@ -24,7 +27,8 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         presenter = DetialsPresenter(view: self)
-        presenter?.fetchFixtures(sportName!,id: leaugeId!)
+        presenter?.fetchFixtures(sportName ?? "football",id: leaugeId ?? 0)
+        presenter?.fetchStandingTeams(sportName ?? "football",id: leaugeId ?? 0)
         
     }
 
@@ -35,6 +39,9 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
         
         func showError(_ message: String) {
             print("Error: \(message)")
+        }
+        func showStanding(_ standingTeams: [TeamStanding]) {
+            self.standingTeams = standingTeams
         }
     /*
     // MARK: - Navigation
