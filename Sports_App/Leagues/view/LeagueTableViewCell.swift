@@ -9,8 +9,12 @@ import UIKit
 
 class LeagueTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var favBtn: UIButton!
     @IBOutlet weak var leagueTitle: UILabel!
     @IBOutlet weak var leagueImage: UIImageView!
+    
+    var delegate: FavouriteCellProtocol?
+    var leagueModel: LeagueModel?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,4 +26,10 @@ class LeagueTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBAction func addFavBtn(_ sender: Any) {
+        print("Favorite button pressed")
+        if let league = leagueModel {
+            delegate?.addToFav(league)
+        }
+    }
 }
