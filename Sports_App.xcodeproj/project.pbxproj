@@ -56,6 +56,9 @@
 		7BA668CB2DD9134E004DBBC3 /* FixtureCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BA668C92DD9134E004DBBC3 /* FixtureCollectionViewCell.xib */; };
 		7BA668CE2DD91376004DBBC3 /* LeaguesTeamCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA668CC2DD91376004DBBC3 /* LeaguesTeamCollectionViewCell.swift */; };
 		7BA668CF2DD91376004DBBC3 /* LeaguesTeamCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BA668CD2DD91376004DBBC3 /* LeaguesTeamCollectionViewCell.xib */; };
+		7BA668D12DD92CB2004DBBC3 /* SectionType .swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA668D02DD92CA3004DBBC3 /* SectionType .swift */; };
+		7BA668D42DD93098004DBBC3 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA668D22DD93098004DBBC3 /* SectionHeaderView.swift */; };
+		7BA668D52DD93098004DBBC3 /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BA668D32DD93098004DBBC3 /* SectionHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +109,9 @@
 		7BA668C92DD9134E004DBBC3 /* FixtureCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FixtureCollectionViewCell.xib; sourceTree = "<group>"; };
 		7BA668CC2DD91376004DBBC3 /* LeaguesTeamCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesTeamCollectionViewCell.swift; sourceTree = "<group>"; };
 		7BA668CD2DD91376004DBBC3 /* LeaguesTeamCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaguesTeamCollectionViewCell.xib; sourceTree = "<group>"; };
+		7BA668D02DD92CA3004DBBC3 /* SectionType .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SectionType .swift"; sourceTree = "<group>"; };
+		7BA668D22DD93098004DBBC3 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		7BA668D32DD93098004DBBC3 /* SectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,12 +281,15 @@
 		7BA6687E2DD761AA004DBBC3 /* DetialsView */ = {
 			isa = PBXGroup;
 			children = (
+				7BA668D02DD92CA3004DBBC3 /* SectionType .swift */,
 				7BA668832DD76BDE004DBBC3 /* DetialsCollectionViewController.swift */,
 				7BA668842DD76BDE004DBBC3 /* DetialsCollectionViewController.xib */,
 				7BA668C82DD9134E004DBBC3 /* FixtureCollectionViewCell.swift */,
 				7BA668C92DD9134E004DBBC3 /* FixtureCollectionViewCell.xib */,
 				7BA668CC2DD91376004DBBC3 /* LeaguesTeamCollectionViewCell.swift */,
 				7BA668CD2DD91376004DBBC3 /* LeaguesTeamCollectionViewCell.xib */,
+				7BA668D22DD93098004DBBC3 /* SectionHeaderView.swift */,
+				7BA668D32DD93098004DBBC3 /* SectionHeaderView.xib */,
 			);
 			path = DetialsView;
 			sourceTree = "<group>";
@@ -420,6 +429,7 @@
 				7BA668CB2DD9134E004DBBC3 /* FixtureCollectionViewCell.xib in Resources */,
 				2282E1C82DD6872700858AD9 /* SportCollectionViewCell.xib in Resources */,
 				7BA668CF2DD91376004DBBC3 /* LeaguesTeamCollectionViewCell.xib in Resources */,
+				7BA668D52DD93098004DBBC3 /* SectionHeaderView.xib in Resources */,
 				228936A62DD54A7800B00E05 /* Main.storyboard in Resources */,
 				2284FEAB2DD63AEE005596BE /* LeagueViewController.xib in Resources */,
 			);
@@ -441,6 +451,7 @@
 				7BA668BB2DD8DB44004DBBC3 /* Team.swift in Sources */,
 				7BA668AE2DD89803004DBBC3 /* URLRequestParams.swift in Sources */,
 				7BA668802DD7653E004DBBC3 /* DetialsViewProtocol.swift in Sources */,
+				7BA668D42DD93098004DBBC3 /* SectionHeaderView.swift in Sources */,
 				2289369F2DD54A7800B00E05 /* AppDelegate.swift in Sources */,
 				7BA6687B2DD75EB0004DBBC3 /* FixtureModel.swift in Sources */,
 				7BA668772DD74EAB004DBBC3 /* APIRouter.swift in Sources */,
@@ -461,6 +472,7 @@
 				228936A12DD54A7800B00E05 /* SceneDelegate.swift in Sources */,
 				7BA668C32DD8E28A004DBBC3 /* TeamsRequestParams.swift in Sources */,
 				2284FEA42DD638CB005596BE /* LeagueModel.swift in Sources */,
+				7BA668D12DD92CB2004DBBC3 /* SectionType .swift in Sources */,
 				7BA668C12DD8E115004DBBC3 /* StandingRequestParams.swift in Sources */,
 				7BA668852DD76BDE004DBBC3 /* DetialsCollectionViewController.swift in Sources */,
 				2284FEA22DD6388C005596BE /* LeagueResponse.swift in Sources */,

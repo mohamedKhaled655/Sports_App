@@ -11,12 +11,14 @@ private let reuseIdentifier = "Cell"
 
 class DetialsCollectionViewController: UICollectionViewController ,DetialsViewProtocol{
 
+    var availableSections: [SectionType] = []
     var upcomingFixtures : [FixtureModel] = []
     var latestFixtures : [FixtureModel] = []
     var standingTeams : [TeamStanding] = []
     var presenter : DetialsPresenter?
     var sportName : String?
     var leaugeId : Int?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,32 +27,128 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        collectionView.register(UINib(nibName: "FixtureCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "fCell")
+        collectionView.register(UINib(nibName: "LeaguesTeamCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "tCell")
+        collectionView.register(UINib(nibName: "SectionHeaderView", bundle: nil),
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: "SectionHeaderView")
+
         presenter = DetialsPresenter(view: self)
         presenter?.fetchFixtures(sportName ?? "football",id: leaugeId ?? 0)
         if sportName != "tennis"{
             presenter?.fetchStandingTeams(sportName ?? "football",id: leaugeId ?? 0)
         }
+        let layout = UICollectionViewCompositionalLayout { sectionIndex, environment in
+            let sectionType = self.availableSections[sectionIndex]
+            switch sectionType {
+            case .upcoming:
+                return self.drawUpComingFixture()
+            case .latest:
+                return self.drawlatestFixture()
+            case .standings:
+                return self.drawTeam()
+            }
+        }
+        collectionView.setCollectionViewLayout(layout, animated: true)
         
     }
+    //MARK: - draw Section
+    func drawUpComingFixture() -> NSCollectionLayoutSection {
+         let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(340), heightDimension: .absolute(137))
+         let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+         let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(200), heightDimension: .absolute(250))
+         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+
+         let section = NSCollectionLayoutSection(group: group)
+         section.orthogonalScrollingBehavior = .continuous
+         section.interGroupSpacing = 20
+         section.contentInsets = NSDirectionalEdgeInsets(top: 24, leading: 24, bottom:24, trailing: 24)
+        addHeader(to: section)
+         return section
+        
+    }
+    func drawlatestFixture() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(340), heightDimension: .absolute(200))
+          let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(300))
+          let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+
+          let section = NSCollectionLayoutSection(group: group)
+          section.interGroupSpacing = 10
+          section.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 12, bottom: 12, trailing: 12)
+        addHeader(to: section)
+          return section
+    }
+    func drawTeam() -> NSCollectionLayoutSection {
+         let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(200), heightDimension: .absolute(250))
+         let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+         let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(200), heightDimension: .absolute(250))
+         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+
+         let section = NSCollectionLayoutSection(group: group)
+         section.orthogonalScrollingBehavior = .continuous
+         section.interGroupSpacing = 20
+         section.contentInsets = NSDirectionalEdgeInsets(top: 24, leading: 24, bottom:24, trailing: 24)
+        addHeader(to: section)
+         return section
+        
+    }
+    func addHeader(to section: NSCollectionLayoutSection, height: CGFloat = 40) {
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                heightDimension: .absolute(height))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
+        )
+        section.boundarySupplementaryItems = [header]
+    }
+
 
     //MARK: - DetialsProtocol Methodes
      
-        func showError(_ message: String) {
-            print("Error: \(message)")
+    func showError(_ message: String) {
+        print("Error: \(message)")
+    }
+    func showStanding(_ standingTeams: [TeamStanding]) {
+        self.standingTeams = standingTeams
+        updateAvailableSections()
+        DispatchQueue.main.async {
+            self.updateBackgroundView()
+            self.collectionView.reloadData()
         }
-        func showStanding(_ standingTeams: [TeamStanding]) {
-            self.standingTeams = standingTeams
+    }
+    
+    func showUpcoming(_ fixtures: [FixtureModel]) {
+        self.upcomingFixtures = fixtures
+        updateAvailableSections()
+        print("Upcoming fixture fetched from the view Controller: \(self.upcomingFixtures.count)")
+        DispatchQueue.main.async {
+            self.updateBackgroundView()
+            self.collectionView.reloadData()
         }
-        func showUpcoming(_ fixtures: [FixtureModel]) {
-            self.upcomingFixtures = fixtures
-            print("Upcoming fixture fetched from the view Controller: \(self.upcomingFixtures.count)")
+    }
+    
+    func showLatest(_ fixtures: [FixtureModel]) {
+        self.latestFixtures = fixtures
+        updateAvailableSections()
+        print("Latest fixture fetched from the view Controller: \(self.latestFixtures.count)")
+        DispatchQueue.main.async {
+            self.updateBackgroundView()
+            self.collectionView.reloadData()
         }
-        
-        func showLatest(_ fixtures: [FixtureModel]) {
-            self.latestFixtures = fixtures
-            print("Latest fixture fetched from the view Controller: \(self.latestFixtures.count)")
-        }
+    }
+
+    func updateAvailableSections() {
+        availableSections = []
+        if !upcomingFixtures.isEmpty { availableSections.append(.upcoming) }
+        if !latestFixtures.isEmpty { availableSections.append(.latest) }
+        if !standingTeams.isEmpty { availableSections.append(.standings) }
+    }
     
     /*
     // MARK: - Navigation
@@ -66,22 +164,86 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return availableSections.count
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        switch availableSections[section] {
+         case .upcoming:
+             return upcomingFixtures.count
+         case .latest:
+             return latestFixtures.count
+         case .standings:
+             return standingTeams.count
+         }
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
-        return cell
+        switch availableSections[indexPath.section] {
+        case .upcoming:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "fCell", for: indexPath) as! FixtureCollectionViewCell
+            cell.configureCell(fixture: upcomingFixtures[indexPath.item], sportName: self.sportName)
+            return cell
+        case .latest:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "fCell", for: indexPath) as! FixtureCollectionViewCell
+            cell.configureCell(fixture: latestFixtures[indexPath.item], sportName: self.sportName)
+            return cell
+        case .standings:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tCell", for: indexPath) as! LeaguesTeamCollectionViewCell
+            cell.configureCell(standingteam: standingTeams[indexPath.item])
+            return cell
+        }
     }
+
+    //MARK: - UIImage Display if there is no Data
+    func updateBackgroundView() {
+        if upcomingFixtures.isEmpty && latestFixtures.isEmpty && standingTeams.isEmpty {
+            let imageView = UIImageView(image: UIImage(named: "fifa"))
+            imageView.contentMode = .scaleAspectFit
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+
+            let container = UIView()
+            container.addSubview(imageView)
+
+            NSLayoutConstraint.activate([
+                imageView.centerXAnchor.constraint(equalTo: container.centerXAnchor),
+                imageView.centerYAnchor.constraint(equalTo: container.centerYAnchor),
+                imageView.widthAnchor.constraint(equalToConstant: 200),
+                imageView.heightAnchor.constraint(equalToConstant: 200)
+            ])
+
+            collectionView.backgroundView = container
+        } else {
+            collectionView.backgroundView = nil
+        }
+    }
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard kind == UICollectionView.elementKindSectionHeader else {
+               return UICollectionReusableView()
+           }
+
+           let header = collectionView.dequeueReusableSupplementaryView(
+               ofKind: kind,
+               withReuseIdentifier: "SectionHeaderView",
+               for: indexPath) as! SectionHeaderView
+
+           // Assign title and style
+           switch availableSections[indexPath.section] {
+           case .upcoming:
+               header.header.text = "Upcoming Fixtures"
+           case .latest:
+               header.header.text = "Latest Fixtures"
+           case .standings:
+               header.header.text = "Teams"
+           }
+
+           // Apply font and color styling (optional if not done in XIB)
+           header.header.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+
+           return header
+       }
 
     // MARK: UICollectionViewDelegate
 
