@@ -11,17 +11,23 @@ class DetialsPresenter {
     var view : DetialsViewProtocol?
     var networkManager: NetworkProtocol
     //MARK:- initialization
-    init(view: DetialsViewProtocol, networkManager: NetworkProtocol){
+    init(view: DetialsViewProtocol, networkManager: NetworkProtocol = NetworkManager()){
         self.view = view
         self.networkManager = networkManager
     }
     func fetchFixtures(_ sportName: String,id: Int){
-        let url = UrlSportBuilder(sportType: sportName, methodType: MethodType.Fixtures)
-            .appendDateFromTo()
-            .appendLeagueID(id: id)
-            .toString()
+        guard let sportType = SportsType(rawValue: sportName) else { return }
+        let params = FixturesRquestParams(
+            sportType: sportType,
+            dateFrom: DateUtils.getStartDateString(),
+            dateTo: DateUtils.getEndDateString(value: 14),
+            leagureId: id
+        )
+        let apiRouter = APIRouter.getFixtures(
+            params: params
+        )
         
-        networkManager.fetchDataFromApi(url: url) { [weak self] (response: FixtureResponse?) in
+        networkManager.fetch(apiRouter) { [weak self] (response: FixtureResponse?) in
             guard let self = self else { return }
             if let fixture = response?.result {
                 self.view?.showFixture(fixture)

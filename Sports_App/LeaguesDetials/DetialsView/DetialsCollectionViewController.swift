@@ -23,8 +23,7 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        let networkManager = NetworkManager()
-        presenter = DetialsPresenter(view: self,networkManager: networkManager)
+        presenter = DetialsPresenter(view: self)
         presenter?.fetchFixtures(sportName!,id: leaugeId!)
         
     }
