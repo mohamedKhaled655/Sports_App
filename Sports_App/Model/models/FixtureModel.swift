@@ -5,7 +5,7 @@
 //  Created by Noha Ali Gomaa on 16/05/2025.
 //
 
-struct FixtureModel: Codable {
+struct FixtureModel : Codable {
     var event_date:String?
     var event_time:String?
     var event_first_player:String?

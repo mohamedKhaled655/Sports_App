@@ -10,9 +10,9 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class DetialsCollectionViewController: UICollectionViewController ,DetialsViewProtocol{
-   
-    
-    var fixtures : [FixtureModel] = []
+
+    var upcomingFixtures : [FixtureModel] = []
+    var latestFixtures : [FixtureModel] = []
     var standingTeams : [TeamStanding] = []
     var presenter : DetialsPresenter?
     var sportName : String?
@@ -28,21 +28,30 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         presenter = DetialsPresenter(view: self)
         presenter?.fetchFixtures(sportName ?? "football",id: leaugeId ?? 0)
-        presenter?.fetchStandingTeams(sportName ?? "football",id: leaugeId ?? 0)
+        if sportName != "tennis"{
+            presenter?.fetchStandingTeams(sportName ?? "football",id: leaugeId ?? 0)
+        }
         
     }
 
     //MARK: - DetialsProtocol Methodes
-        func showFixture(_ fixture: [FixtureModel]) {
-            self.fixtures = fixture
-        }
-        
+     
         func showError(_ message: String) {
             print("Error: \(message)")
         }
         func showStanding(_ standingTeams: [TeamStanding]) {
             self.standingTeams = standingTeams
         }
+        func showUpcoming(_ fixtures: [FixtureModel]) {
+            self.upcomingFixtures = fixtures
+            print("Upcoming fixture fetched from the view Controller: \(self.upcomingFixtures.count)")
+        }
+        
+        func showLatest(_ fixtures: [FixtureModel]) {
+            self.latestFixtures = fixtures
+            print("Latest fixture fetched from the view Controller: \(self.latestFixtures.count)")
+        }
+    
     /*
     // MARK: - Navigation
 

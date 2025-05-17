@@ -63,7 +63,7 @@ class LeagueViewController: UIViewController,UITableViewDataSource, UITableViewD
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var detials = self.storyboard?.instantiateViewController(withIdentifier: "DetialsCollectionViewController") as! DetialsCollectionViewController
+       let detials = self.storyboard?.instantiateViewController(withIdentifier: "DetialsCollectionViewController") as! DetialsCollectionViewController
         detials.sportName = selectedSportName
         detials.leaugeId = leagues[indexPath.row].league_key
         navigationController?.pushViewController(detials, animated: true)

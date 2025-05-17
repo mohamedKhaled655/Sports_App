@@ -29,9 +29,9 @@ class DetialsPresenter {
         )
         networkManager.fetch(apiRouter) { [weak self] (response: FixtureResponse?) in
             guard let self = self else { return }
-            if let fixture = response?.result {
-                self.view?.showFixture(fixture)
-                print("fixture fetched \(fixture.count)")
+          
+            if let fixtures = response?.result {
+                self.filterFixtures(fixtures,_sportName: sportType)
             } else {
                 self.view?.showError("Failed to fetch fixtures.")
             }
@@ -53,6 +53,40 @@ class DetialsPresenter {
             } else {
                 self.view?.showError("Failed to fetch Standing Teams.")
             }
+        }
+    }
+    
+    //MARK:- Filter the Fixtures
+    func filterFixtures( _ fixtures : [FixtureModel],_sportName: SportsType){
+        var upcomingFixtures: [FixtureModel] = []
+        var latestFixtures: [FixtureModel] = []
+        if _sportName.rawValue == "cricket" {
+            for fixture in fixtures {
+                let homeResult = fixture.event_home_final_result ?? ""
+                if homeResult.isEmpty {
+                    upcomingFixtures.append(fixture)
+                } else {
+                    latestFixtures.append(fixture)
+                }
+            }
+            self.view?.showUpcoming(upcomingFixtures)
+            self.view?.showLatest(latestFixtures)
+            print("Upcoming fixture fetched \(upcomingFixtures.count)")
+            print("Latest fixture fetched \(latestFixtures.count)")
+        }
+        else{
+            for fixture in fixtures {
+                let finalResult = fixture.event_final_result ?? ""
+                if finalResult ==  "-" {
+                    upcomingFixtures.append(fixture)
+                } else {
+                    latestFixtures.append(fixture)
+                }
+            }
+            self.view?.showUpcoming(upcomingFixtures)
+            self.view?.showLatest(latestFixtures)
+            print("Upcoming fixture fetched \(upcomingFixtures.count)")
+            print("Latest fixture fetched \(latestFixtures.count)")
         }
     }
 }
