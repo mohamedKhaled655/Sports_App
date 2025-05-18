@@ -328,10 +328,10 @@
 		7BA668AF2DD89820004DBBC3 /* URLRequestParams */ = {
 			isa = PBXGroup;
 			children = (
-				7BA668C22DD8E27B004DBBC3 /* TeamsRequestParams.swift */,
 				7BA668C02DD8E0FC004DBBC3 /* StandingRequestParams.swift */,
 				7BA668B22DD89858004DBBC3 /* LeaguesRquestParams.swift */,
 				7BA668B02DD89830004DBBC3 /* FixturesRquestParams.swift */,
+				7BA668C22DD8E27B004DBBC3 /* TeamsRequestParams.swift */,
 			);
 			path = URLRequestParams;
 			sourceTree = "<group>";

@@ -11,14 +11,14 @@ struct TeamsRequestParams: URLRequestParams {
     var teamId: Int?
     
     init(sportType: SportsType, teamId: Int? = nil) {
-        self.teamId = teamId
+        self.teamId = teamId ?? nil
         self.sportType = sportType
     }
     func asDictionary(API_KEY apiKey: String) -> [String : Any] {
         var dictionary: [String: Any] = [:]
         dictionary["APIkey"] = apiKey
-        if let teamId{
-            dictionary["teamId"] = teamId
+        if let leagureId = teamId {
+            dictionary["leagueId"] = leagureId
         }
         dictionary["met"] = SportsMethodType.Standings.rawValue
         return dictionary

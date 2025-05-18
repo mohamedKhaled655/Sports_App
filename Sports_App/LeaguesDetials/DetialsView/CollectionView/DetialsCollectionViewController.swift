@@ -55,30 +55,30 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
     }
     //MARK: - draw Section
     func drawUpComingFixture() -> NSCollectionLayoutSection {
-         let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(340), heightDimension: .absolute(137))
+         let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(400), heightDimension: .absolute(250))
          let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
-         let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(200), heightDimension: .absolute(250))
+         let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(400), heightDimension: .absolute(250))
          let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 
          let section = NSCollectionLayoutSection(group: group)
          section.orthogonalScrollingBehavior = .continuous
-         section.interGroupSpacing = 20
-         section.contentInsets = NSDirectionalEdgeInsets(top: 24, leading: 24, bottom:24, trailing: 24)
+         section.interGroupSpacing = 10
+         section.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 12, bottom:12, trailing: 12)
         addHeader(to: section)
          return section
         
     }
     func drawlatestFixture() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(340), heightDimension: .absolute(200))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(390), heightDimension: .absolute(250))
           let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(300))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(390), heightDimension: .absolute(300))
           let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
 
           let section = NSCollectionLayoutSection(group: group)
-          section.interGroupSpacing = 10
-          section.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 12, bottom: 12, trailing: 12)
+          section.interGroupSpacing = 5
+          section.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 4, bottom: 2, trailing: 4)
         addHeader(to: section)
           return section
     }
