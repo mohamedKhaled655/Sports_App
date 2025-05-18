@@ -64,6 +64,16 @@ class LeagueViewController: UIViewController,UITableViewDataSource, UITableViewD
         cell.leagueModel = league
         cell.delegate = self
         
+        if LocalDBManager.shared.isLeagueExist(leagueKey: league.league_key ?? 0) {
+            cell.favBtn.setImage(UIImage(systemName: "heart.circle.fill"), for: .normal)
+            cell.favBtn.backgroundColor = .white
+           } else {
+            
+            cell.favBtn.setImage(UIImage(systemName: "heart.circle"), for: .normal)
+            cell.favBtn.backgroundColor = .white
+               
+           }
+        
         return cell
     }
     

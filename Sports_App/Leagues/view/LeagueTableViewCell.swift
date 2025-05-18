@@ -28,8 +28,17 @@ class LeagueTableViewCell: UITableViewCell {
     
     @IBAction func addFavBtn(_ sender: Any) {
         print("Favorite button pressed")
-        if let league = leagueModel {
-            delegate?.addToFav(league)
-        }
+        guard let league = leagueModel else { return }
+            
+            if LocalDBManager.shared.isLeagueExist(leagueKey: league.league_key ?? 0) {
+                LocalDBManager.shared.removeLeague(leagueKey: league.league_key ?? 0)
+                favBtn.setImage(UIImage(systemName: "heart.circle"), for: .normal)
+                favBtn.backgroundColor = .white
+            } else {
+                favBtn.setImage(UIImage(systemName: "heart.circle.fill"), for: .normal)
+                favBtn.backgroundColor = .white
+                delegate?.addToFav(league)
+               
+            }
     }
 }
