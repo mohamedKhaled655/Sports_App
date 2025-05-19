@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,26 +24,46 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16C-S5-5N5">
-                        <rect key="frame" x="95" y="30" width="243" height="24"/>
+                        <rect key="frame" x="95" y="30" width="185" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="185" id="1Oj-Aj-W6k"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                        <color key="textColor" red="1" green="0.8674879808" blue="0.21331402969999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" systemColor="tableCellBlueTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqt-Dk-Kdv">
+                        <rect key="frame" x="288" y="12" width="56" height="56"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="cqt-Dk-Kdv" secondAttribute="height" multiplier="1:1" id="Mtd-sD-XoP"/>
+                            <constraint firstAttribute="width" constant="56" id="i13-Bj-MoF"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain">
+                            <backgroundConfiguration key="background" cornerRadius="50"/>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="addFavBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="m0E-tW-g5s"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="16C-S5-5N5" secondAttribute="trailing" constant="14" id="4V4-6R-ccw"/>
                     <constraint firstItem="Tfr-bu-yOh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="6bt-oZ-paF"/>
+                    <constraint firstItem="cqt-Dk-Kdv" firstAttribute="leading" secondItem="16C-S5-5N5" secondAttribute="trailing" constant="8" id="AxE-X9-xa3"/>
                     <constraint firstItem="16C-S5-5N5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="Dth-4T-RlI"/>
                     <constraint firstItem="Tfr-bu-yOh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="FEm-Pq-ufA"/>
                     <constraint firstAttribute="bottom" secondItem="Tfr-bu-yOh" secondAttribute="bottom" constant="8" id="YjE-Ca-r3n"/>
                     <constraint firstAttribute="bottom" secondItem="16C-S5-5N5" secondAttribute="bottom" constant="26" id="hpA-yf-cuz"/>
                     <constraint firstItem="Tfr-bu-yOh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="lZR-Lh-fuP"/>
+                    <constraint firstItem="cqt-Dk-Kdv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="lit-qk-pry"/>
+                    <constraint firstAttribute="bottom" secondItem="cqt-Dk-Kdv" secondAttribute="bottom" constant="12" id="vbi-dv-wCA"/>
                     <constraint firstItem="16C-S5-5N5" firstAttribute="leading" secondItem="Tfr-bu-yOh" secondAttribute="trailing" constant="15" id="w8K-Xc-YWS"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="favBtn" destination="cqt-Dk-Kdv" id="r6u-sa-rMR"/>
                 <outlet property="leagueImage" destination="Tfr-bu-yOh" id="QWf-Tb-UB0"/>
                 <outlet property="leagueTitle" destination="16C-S5-5N5" id="RB9-Tn-wR4"/>
             </connections>
@@ -52,5 +72,8 @@
     </objects>
     <resources>
         <image name="fifa" width="493.33334350585938" height="660.33331298828125"/>
+        <systemColor name="tableCellBlueTextColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

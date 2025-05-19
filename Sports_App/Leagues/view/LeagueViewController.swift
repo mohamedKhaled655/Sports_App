@@ -8,7 +8,8 @@
 import UIKit
 import SDWebImage
 
-class LeagueViewController: UIViewController,UITableViewDataSource, UITableViewDelegate , LeaguesViewProtocol{
+class LeagueViewController: UIViewController,UITableViewDataSource, UITableViewDelegate , LeaguesViewProtocol ,FavouriteCellProtocol{
+    
     
 
     @IBOutlet weak var leaguesTable: UITableView!
@@ -59,6 +60,18 @@ class LeagueViewController: UIViewController,UITableViewDataSource, UITableViewD
         
         cell.leagueImage.sd_setImage(with: URL(string: league.league_logo ?? ""), placeholderImage: UIImage(named: "fifa"))
         
+        cell.leagueModel = league
+        cell.delegate = self
+        
+        if LocalDBManager.shared.isLeagueExist(leagueKey: league.league_key ?? 0) {
+            cell.favBtn.setImage(UIImage(systemName: "heart.circle.fill"), for: .normal)
+            cell.favBtn.backgroundColor = .white
+           } else {
+            
+            cell.favBtn.setImage(UIImage(systemName: "heart.circle"), for: .normal)
+            cell.favBtn.backgroundColor = .white
+               
+           }
         
         return cell
     }
@@ -72,6 +85,13 @@ class LeagueViewController: UIViewController,UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+    func addToFav(_ league: LeagueModel) {
+        let saveLeague = League(leagueKey: league.league_key, leagueName: league.league_name, sportName: selectedSportName ?? "football", leagueLogo: league.league_logo ?? "\(selectedSportName)")
+        
+        LocalDBManager.shared.insertLeague(saveLeague)
+        
     }
 
     /*
