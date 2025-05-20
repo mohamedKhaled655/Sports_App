@@ -9,7 +9,7 @@ import UIKit
 import SDWebImage
 import Lottie
 
-class ViewController: UIViewController 
+class ViewController: UIViewController
 //                      UICollectionViewDataSource ,UICollectionViewDelegate ,UICollectionViewDelegateFlowLayout
 {
    
@@ -31,14 +31,24 @@ class ViewController: UIViewController
             super.viewDidLoad()
             setupAnimation()
             setupTapGestures()
+            styleAnimationViews()
         }
 
         private func setupAnimation() {
             [football, basketball, cricket, tennis].forEach {
                 $0?.contentMode = .scaleAspectFit
-                $0?.loopMode = .playOnce
+                $0?.loopMode = .loop
                 $0?.animationSpeed = 0.75
                 $0?.play()
+            }
+        }
+        private func styleAnimationViews() {
+            let views = [football, basketball, cricket, tennis]
+            views.forEach {
+                $0?.layer.cornerRadius = 16
+                $0?.layer.borderWidth = 2
+                $0?.layer.borderColor = UIColor.orange.cgColor
+                $0?.clipsToBounds = true
             }
         }
 

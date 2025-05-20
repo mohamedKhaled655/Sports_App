@@ -157,6 +157,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="1" green="0.25098039215686274" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="2lb-Dc-3SI" kind="relationship" relationship="viewControllers" id="RWt-N0-zku"/>
@@ -237,20 +238,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Zjo-6u-vZc">
-                                <rect key="frame" x="24" y="210" width="345" height="501"/>
+                                <rect key="frame" x="24" y="210" width="345" height="477"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mtl-jJ-5p9">
-                                        <rect key="frame" x="0.0" y="0.0" width="345" height="250.66666666666666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="238.66666666666666"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNL-Rl-Iuz" customClass="LottieAnimationView" customModule="Lottie">
-                                                <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="250.66666666666666"/>
-                                                <color key="backgroundColor" systemColor="placeholderTextColor"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="238.66666666666666"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="football"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRu-Y2-EMY" customClass="LottieAnimationView" customModule="Lottie">
-                                                <rect key="frame" x="172.66666666666663" y="0.0" width="172.33333333333337" height="250.66666666666666"/>
+                                                <rect key="frame" x="172.66666666666663" y="0.0" width="172.33333333333337" height="238.66666666666666"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="basketball"/>
@@ -262,17 +263,17 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9aF-Sl-l0W">
-                                        <rect key="frame" x="0.0" y="250.66666666666669" width="345" height="250.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="238.66666666666669" width="345" height="238.33333333333331"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uz5-ia-p1I" customClass="LottieAnimationView" customModule="Lottie">
-                                                <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="250.33333333333334"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="238.33333333333334"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="cricket"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KxZ-kH-Ypq" customClass="LottieAnimationView" customModule="Lottie">
-                                                <rect key="frame" x="172.66666666666663" y="0.0" width="172.33333333333337" height="250.33333333333334"/>
+                                                <rect key="frame" x="172.66666666666663" y="0.0" width="172.33333333333337" height="238.33333333333334"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="tennis"/>
@@ -292,7 +293,7 @@
                         <viewLayoutGuide key="safeArea" id="tCF-nn-AlG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="tCF-nn-AlG" firstAttribute="bottom" secondItem="Zjo-6u-vZc" secondAttribute="bottom" constant="24" id="8cU-x8-52l"/>
+                            <constraint firstItem="tCF-nn-AlG" firstAttribute="bottom" secondItem="Zjo-6u-vZc" secondAttribute="bottom" constant="48" id="8cU-x8-52l"/>
                             <constraint firstItem="tCF-nn-AlG" firstAttribute="trailing" secondItem="Zjo-6u-vZc" secondAttribute="trailing" constant="24" id="A22-tX-sHS"/>
                             <constraint firstItem="Zjo-6u-vZc" firstAttribute="top" secondItem="tCF-nn-AlG" secondAttribute="top" constant="48" id="GJx-yu-wQo"/>
                             <constraint firstItem="Zjo-6u-vZc" firstAttribute="leading" secondItem="tCF-nn-AlG" secondAttribute="leading" constant="24" id="RvJ-NY-PET"/>
@@ -333,9 +334,6 @@
     <resources>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
-        <systemColor name="placeholderTextColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
