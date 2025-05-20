@@ -1,56 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="KGk-i7-Jjw" customClass="LeagueTableViewCell" customModule="Sports_App" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="352" height="80"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="117" id="KGk-i7-Jjw" customClass="LeagueTableViewCell" customModule="Sports_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="381" height="117"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="352" height="80"/>
+                <rect key="frame" x="0.0" y="0.0" width="381" height="117"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fifa" translatesAutoresizingMaskIntoConstraints="NO" id="Tfr-bu-yOh">
-                        <rect key="frame" x="0.0" y="8" width="80" height="80"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gmg-tB-bPO">
+                        <rect key="frame" x="8" y="16" width="365" height="85"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dsf-Tp-HpG">
+                                <rect key="frame" x="97" y="32" width="197" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrS-8Q-HzI">
+                                <rect key="frame" x="302" y="15" width="55" height="55"/>
+                                <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="g31-qP-DSc"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="o6w-1k-BYh"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="">
+                                    <backgroundConfiguration key="background" cornerRadius="50"/>
+                                    <color key="baseBackgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addFavBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Byx-5h-0gf"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fifa" translatesAutoresizingMaskIntoConstraints="NO" id="jhR-nX-yvH">
+                                <rect key="frame" x="3" y="3" width="75" height="79"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="BEs-1Z-t2u"/>
+                                    <constraint firstAttribute="height" constant="85" id="lav-aq-GXV"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="80" id="L2R-1V-9bG"/>
-                            <constraint firstAttribute="height" constant="80" id="Z3x-1v-fEV"/>
+                            <constraint firstItem="Dsf-Tp-HpG" firstAttribute="leading" secondItem="jhR-nX-yvH" secondAttribute="trailing" constant="8" id="0Ce-rV-220"/>
+                            <constraint firstAttribute="bottom" secondItem="jhR-nX-yvH" secondAttribute="bottom" id="2nt-T3-vSH"/>
+                            <constraint firstAttribute="bottom" secondItem="Dsf-Tp-HpG" secondAttribute="bottom" constant="32" id="4IN-CE-5pY"/>
+                            <constraint firstAttribute="trailing" secondItem="OrS-8Q-HzI" secondAttribute="trailing" constant="8" id="4nE-Eg-z5s"/>
+                            <constraint firstItem="jhR-nX-yvH" firstAttribute="leading" secondItem="gmg-tB-bPO" secondAttribute="leading" constant="4" id="Gb4-pH-lgp"/>
+                            <constraint firstItem="OrS-8Q-HzI" firstAttribute="leading" secondItem="Dsf-Tp-HpG" secondAttribute="trailing" constant="8" id="L87-bd-D4e"/>
+                            <constraint firstAttribute="bottom" secondItem="jhR-nX-yvH" secondAttribute="bottom" constant="4" id="MvD-ZZ-Qas"/>
+                            <constraint firstItem="Dsf-Tp-HpG" firstAttribute="leading" secondItem="jhR-nX-yvH" secondAttribute="trailing" constant="4" id="NFT-k9-97H"/>
+                            <constraint firstItem="Dsf-Tp-HpG" firstAttribute="top" secondItem="gmg-tB-bPO" secondAttribute="top" constant="32" id="PWr-wf-7jT"/>
+                            <constraint firstItem="jhR-nX-yvH" firstAttribute="top" secondItem="gmg-tB-bPO" secondAttribute="top" constant="4" id="VhN-SS-GdX"/>
+                            <constraint firstItem="OrS-8Q-HzI" firstAttribute="top" secondItem="gmg-tB-bPO" secondAttribute="top" constant="15" id="VrP-pq-LTn"/>
+                            <constraint firstAttribute="bottom" secondItem="jhR-nX-yvH" secondAttribute="bottom" constant="4" id="cCQ-P8-ljx"/>
+                            <constraint firstAttribute="bottom" secondItem="OrS-8Q-HzI" secondAttribute="bottom" constant="15" id="iwW-oK-9Vk"/>
+                            <constraint firstItem="jhR-nX-yvH" firstAttribute="top" secondItem="gmg-tB-bPO" secondAttribute="top" constant="4" id="pI6-At-6Wt"/>
+                            <constraint firstItem="jhR-nX-yvH" firstAttribute="leading" secondItem="gmg-tB-bPO" secondAttribute="leading" constant="4" id="prw-af-BcJ"/>
+                            <constraint firstAttribute="trailing" secondItem="OrS-8Q-HzI" secondAttribute="trailing" constant="8" id="xY4-1E-CvP"/>
                         </constraints>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16C-S5-5N5">
-                        <rect key="frame" x="95" y="30" width="243" height="24"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                        <color key="textColor" red="1" green="0.8674879808" blue="0.21331402969999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="16C-S5-5N5" secondAttribute="trailing" constant="14" id="4V4-6R-ccw"/>
-                    <constraint firstItem="Tfr-bu-yOh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="6bt-oZ-paF"/>
-                    <constraint firstItem="16C-S5-5N5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="Dth-4T-RlI"/>
-                    <constraint firstItem="Tfr-bu-yOh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="FEm-Pq-ufA"/>
-                    <constraint firstAttribute="bottom" secondItem="Tfr-bu-yOh" secondAttribute="bottom" constant="8" id="YjE-Ca-r3n"/>
-                    <constraint firstAttribute="bottom" secondItem="16C-S5-5N5" secondAttribute="bottom" constant="26" id="hpA-yf-cuz"/>
-                    <constraint firstItem="Tfr-bu-yOh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="lZR-Lh-fuP"/>
-                    <constraint firstItem="16C-S5-5N5" firstAttribute="leading" secondItem="Tfr-bu-yOh" secondAttribute="trailing" constant="15" id="w8K-Xc-YWS"/>
+                    <constraint firstItem="gmg-tB-bPO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="2am-a1-c3P"/>
+                    <constraint firstAttribute="trailing" secondItem="gmg-tB-bPO" secondAttribute="trailing" constant="8" id="RA2-zZ-GVy"/>
+                    <constraint firstAttribute="bottom" secondItem="gmg-tB-bPO" secondAttribute="bottom" constant="16" id="d9l-78-P33"/>
+                    <constraint firstItem="gmg-tB-bPO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="xlk-HP-YSG"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="leagueImage" destination="Tfr-bu-yOh" id="QWf-Tb-UB0"/>
-                <outlet property="leagueTitle" destination="16C-S5-5N5" id="RB9-Tn-wR4"/>
+                <outlet property="cellView" destination="gmg-tB-bPO" id="OsQ-8L-eZw"/>
+                <outlet property="favBtn" destination="OrS-8Q-HzI" id="SaL-dO-5SF"/>
+                <outlet property="leagueImage" destination="jhR-nX-yvH" id="ysT-2C-3yb"/>
+                <outlet property="leagueTitle" destination="Dsf-Tp-HpG" id="SVP-Tl-AVS"/>
             </connections>
-            <point key="canvasLocation" x="181.67938931297709" y="26.056338028169016"/>
+            <point key="canvasLocation" x="-721.37404580152668" y="98.943661971830991"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="fifa" width="493.33334350585938" height="660.33331298828125"/>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

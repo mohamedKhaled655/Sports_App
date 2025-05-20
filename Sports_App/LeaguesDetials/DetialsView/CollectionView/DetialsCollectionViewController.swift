@@ -116,6 +116,7 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
     }
     func showStanding(_ standingTeams: [TeamStanding]) {
         self.standingTeams = standingTeams
+        print("standingTeams \(standingTeams)")
         updateAvailableSections()
         DispatchQueue.main.async {
             self.updateBackgroundView()
@@ -244,6 +245,20 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
 
            return header
        }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let section = availableSections[indexPath.section]
+        
+        if section == .standings {
+            let selectedTeam = standingTeams[indexPath.item]
+            
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "TeamViewController") as! TeamViewController
+            vc.teamId = selectedTeam.team_key
+            vc.sportName = sportName
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+
 
     // MARK: UICollectionViewDelegate
 

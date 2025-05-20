@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="129" id="KGk-i7-Jjw" customClass="PlayerTableViewCell" customModule="Sports_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="509" height="129"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="509" height="129"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vux-Mt-qgl">
+                        <rect key="frame" x="8" y="8" width="493" height="113"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OnJ-me-6vQ">
+                                <rect key="frame" x="16" y="16" width="81" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="OnJ-me-6vQ" secondAttribute="height" multiplier="1:1" id="q1k-DP-sIZ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RfN-VJ-M3k">
+                                <rect key="frame" x="113" y="23" width="284" height="26"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GoalKeeper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfR-6S-i1T">
+                                <rect key="frame" x="117" y="59.000000000000007" width="88.666666666666686" height="20.333333333333336"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shirt" translatesAutoresizingMaskIntoConstraints="NO" id="HYb-Y7-xSa">
+                                <rect key="frame" x="405" y="16" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="HYb-Y7-xSa" secondAttribute="height" multiplier="1:1" id="rwp-G0-yEU"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="019-HB-hLu">
+                                <rect key="frame" x="421" y="27" width="49" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HYb-Y7-xSa" firstAttribute="top" secondItem="vux-Mt-qgl" secondAttribute="top" constant="16" id="16K-Xs-uez"/>
+                            <constraint firstAttribute="trailing" secondItem="019-HB-hLu" secondAttribute="trailing" constant="23" id="6ia-PU-fPG"/>
+                            <constraint firstItem="HYb-Y7-xSa" firstAttribute="leading" secondItem="RfN-VJ-M3k" secondAttribute="trailing" constant="8" id="D24-3D-Jxv"/>
+                            <constraint firstItem="019-HB-hLu" firstAttribute="top" secondItem="vux-Mt-qgl" secondAttribute="top" constant="27" id="GXL-tl-TSl"/>
+                            <constraint firstAttribute="bottom" secondItem="019-HB-hLu" secondAttribute="bottom" constant="54" id="H08-6G-9KU"/>
+                            <constraint firstItem="FfR-6S-i1T" firstAttribute="leading" secondItem="OnJ-me-6vQ" secondAttribute="trailing" constant="20" id="IYG-TN-olk"/>
+                            <constraint firstItem="RfN-VJ-M3k" firstAttribute="top" secondItem="vux-Mt-qgl" secondAttribute="top" constant="23" id="IaQ-0D-54w"/>
+                            <constraint firstItem="OnJ-me-6vQ" firstAttribute="top" secondItem="vux-Mt-qgl" secondAttribute="top" constant="16" id="N48-Oj-RXg"/>
+                            <constraint firstAttribute="bottom" secondItem="OnJ-me-6vQ" secondAttribute="bottom" constant="16" id="O5s-KF-R8a"/>
+                            <constraint firstAttribute="bottom" secondItem="HYb-Y7-xSa" secondAttribute="bottom" constant="17" id="PBu-X8-MPq"/>
+                            <constraint firstItem="OnJ-me-6vQ" firstAttribute="leading" secondItem="vux-Mt-qgl" secondAttribute="leading" constant="16" id="arJ-br-laA"/>
+                            <constraint firstAttribute="trailing" secondItem="HYb-Y7-xSa" secondAttribute="trailing" constant="8" id="hyC-DX-pmB"/>
+                            <constraint firstItem="FfR-6S-i1T" firstAttribute="top" secondItem="RfN-VJ-M3k" secondAttribute="bottom" constant="10" id="kFa-iD-nLE"/>
+                            <constraint firstItem="019-HB-hLu" firstAttribute="leading" secondItem="RfN-VJ-M3k" secondAttribute="trailing" constant="24" id="l8n-JU-rsE"/>
+                            <constraint firstItem="RfN-VJ-M3k" firstAttribute="leading" secondItem="OnJ-me-6vQ" secondAttribute="trailing" constant="16" id="qhL-D8-XIg"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="vux-Mt-qgl" secondAttribute="bottom" constant="8" id="3dg-nB-7eL"/>
+                    <constraint firstItem="vux-Mt-qgl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="FbB-0k-i5z"/>
+                    <constraint firstItem="vux-Mt-qgl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Ibn-CF-22L"/>
+                    <constraint firstAttribute="trailing" secondItem="vux-Mt-qgl" secondAttribute="trailing" constant="8" id="rVt-Ht-10p"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="playerImage" destination="OnJ-me-6vQ" id="P0k-bf-Dgl"/>
+                <outlet property="playerName" destination="RfN-VJ-M3k" id="Kz3-17-Adp"/>
+                <outlet property="playerNum" destination="019-HB-hLu" id="p0v-S3-Qb9"/>
+                <outlet property="playerType" destination="FfR-6S-i1T" id="ZJj-xX-cV7"/>
+                <outlet property="viewCell" destination="vux-Mt-qgl" id="1dC-Dv-IRK"/>
+            </connections>
+            <point key="canvasLocation" x="-141.22137404580153" y="-2.4647887323943665"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="shirt" width="83.333335876464844" height="83.333335876464844"/>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
