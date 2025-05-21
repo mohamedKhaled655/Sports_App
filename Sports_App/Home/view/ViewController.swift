@@ -90,6 +90,7 @@ class ViewController: UIViewController
             print("Selected sport: \(selectedSport ?? "")")
             if let leaguesVC = storyboard?.instantiateViewController(withIdentifier: "LeagueViewController") as? LeagueViewController {
                 leaguesVC.selectedSportName = selectedSport
+                leaguesVC.hidesBottomBarWhenPushed = true
                 navigationController?.pushViewController(leaguesVC, animated: true)
             }
         }

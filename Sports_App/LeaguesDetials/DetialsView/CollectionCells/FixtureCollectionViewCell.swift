@@ -15,6 +15,9 @@ class FixtureCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var teamTwo: UIImageView!
     @IBOutlet weak var teamTwoName: UILabel!
     @IBOutlet weak var finalScore: UILabel!
+    @IBOutlet weak var timeOfThematch: UILabel!
+    
+    @IBOutlet weak var DateForTheMatch: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         teamOne.layer.cornerRadius = teamOne.frame.size.width / 2
@@ -23,7 +26,7 @@ class FixtureCollectionViewCell: UICollectionViewCell {
         teamTwo.layer.masksToBounds = true
           self.layer.borderColor = UIColor(red: 1.0, green: 0.25, blue: 0.0, alpha: 1.0).cgColor
           self.layer.borderWidth = 1.5
-          self.layer.cornerRadius = 8.0
+        self.layer.cornerRadius = 16.0
           self.clipsToBounds = true
     
     }
@@ -48,9 +51,13 @@ class FixtureCollectionViewCell: UICollectionViewCell {
            // Handle final score display
            if sportName == "cricket" {
                finalScore.text = fixture.event_home_final_result == "-" ? " " : fixture.event_home_final_result
+               DateForTheMatch.text = fixture.event_date_stop
            } else {
                finalScore.text = fixture.event_final_result == "-" ? " " : fixture.event_final_result
+               DateForTheMatch.text = fixture.event_date
            }
+        timeOfThematch.text = fixture.event_time
+        
     }
     func animatePop() {
         // Scale up slightly

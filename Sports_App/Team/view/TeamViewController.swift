@@ -31,7 +31,6 @@ class TeamViewController: UIViewController ,UITableViewDataSource, UITableViewDe
         let teamId = teamId ?? 0
         teamPresenter?.fetchTeamDetails(sportName,teamId)
     }
-    
     func showLeagues(_ team: [Team]) {
         self.players = team.first?.players ?? []
        

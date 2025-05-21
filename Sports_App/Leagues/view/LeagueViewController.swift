@@ -40,6 +40,7 @@ class LeagueViewController: UIViewController,UITableViewDataSource, UITableViewD
 
      
     }
+
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         leaguesPresenter?.searchLeagues(with: searchText)
     }
@@ -99,6 +100,7 @@ class LeagueViewController: UIViewController,UITableViewDataSource, UITableViewD
         detials.league = league
         detials.leaugeId = league.league_key
         detials.sportName = self.selectedSportName
+        detials.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(detials, animated: true)
         
     }

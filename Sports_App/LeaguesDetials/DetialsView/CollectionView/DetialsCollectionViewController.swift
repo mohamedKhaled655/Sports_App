@@ -9,7 +9,7 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class DetialsCollectionViewController: UICollectionViewController ,DetialsViewProtocol , FavouriteCellProtocol{
+class DetialsCollectionViewController: UICollectionViewController , UICollectionViewDelegateFlowLayout , DetialsViewProtocol , FavouriteCellProtocol{
    
     
 
@@ -58,6 +58,7 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
         collectionView.setCollectionViewLayout(layout, animated: true)
         updateFavButtonIcon()
     }
+ 
     //MARK: - draw Section
     func drawUpComingFixture() -> NSCollectionLayoutSection {
          let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(350), heightDimension: .absolute(200))
@@ -68,22 +69,21 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
 
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPagingCentered
-        section.orthogonalScrollingBehavior = .continuous
-        section.interGroupSpacing = 15
+        section.interGroupSpacing = 25
         section.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 8, bottom:12, trailing: 8)
         addHeader(to: section)
          return section
         
     }
     func drawlatestFixture() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(390), heightDimension: .absolute(250))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(390), heightDimension: .absolute(150))
           let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(390), heightDimension: .absolute(300))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(390), heightDimension: .absolute(150))
           let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
 
         let section = NSCollectionLayoutSection(group: group)
-        section.interGroupSpacing = 5
+        section.interGroupSpacing = 10
         section.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: (UIScreen.main.bounds.width - 390) / 2, bottom: 2, trailing: (UIScreen.main.bounds.width - 390) / 2)
         addHeader(to: section)
           return section
@@ -225,9 +225,6 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
         case  .latest:
             if let fixtureCell = cell as? FixtureCollectionViewCell {
                 fixtureCell.animatePop()
-                fixtureCell.applyPopStyle()
-                fixtureCell.animateZoomIn()
-                fixtureCell.applyNormalStyle()
             }
         case .standings:
             if let teamCell = cell as? LeaguesTeamCollectionViewCell {
@@ -241,10 +238,13 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
     }
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard let collectionView = scrollView as? UICollectionView else { return }
-        
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.scrollDirection = .horizontal
+            layout.minimumLineSpacing = 24
+            layout.minimumInteritemSpacing = 20
+            layout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        }
         let visibleCells = collectionView.visibleCells
-        
-        // Center point of the visible area
         let visibleCenterX = collectionView.bounds.midX + collectionView.contentOffset.x
         let visibleCenterY = collectionView.bounds.midY + collectionView.contentOffset.y
         
@@ -254,7 +254,10 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
         for cell in visibleCells {
             guard let indexPath = collectionView.indexPath(for: cell),
                   let attributes = collectionView.layoutAttributesForItem(at: indexPath) else { continue }
-            
+            if availableSections[indexPath.section] == .latest {
+                      (cell as? FixtureCollectionViewCell)?.applyNormalStyle()
+                      continue
+                  }
             let cellCenter = attributes.center
             let dx = cellCenter.x - visibleCenterX
             let dy = cellCenter.y - visibleCenterY
@@ -267,6 +270,11 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
         }
         
         for cell in visibleCells {
+            guard let indexPath = collectionView.indexPath(for: cell) else { continue }
+            if availableSections[indexPath.section] == .latest {
+                       (cell as? FixtureCollectionViewCell)?.applyNormalStyle()
+                       continue
+                   }
             if cell == closestCell {
                 (cell as? FixtureCollectionViewCell)?.applyFocusedStyle()
             } else {
@@ -335,6 +343,7 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "TeamViewController") as! TeamViewController
             vc.teamId = selectedTeam.team_key
             vc.sportName = sportName
+            vc.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(vc, animated: true)
         }
     }

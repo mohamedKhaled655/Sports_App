@@ -21,7 +21,7 @@
                         <rect key="frame" x="8" y="16" width="365" height="93"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dsf-Tp-HpG">
-                                <rect key="frame" x="93" y="32" width="201" height="29"/>
+                                <rect key="frame" x="97" y="32" width="197" height="29"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -54,13 +54,11 @@
                         <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Dsf-Tp-HpG" firstAttribute="leading" secondItem="jhR-nX-yvH" secondAttribute="trailing" constant="8" id="0Ce-rV-220"/>
-                            <constraint firstAttribute="bottom" secondItem="jhR-nX-yvH" secondAttribute="bottom" id="2nt-T3-vSH"/>
                             <constraint firstAttribute="bottom" secondItem="Dsf-Tp-HpG" secondAttribute="bottom" constant="32" id="4IN-CE-5pY"/>
                             <constraint firstAttribute="trailing" secondItem="OrS-8Q-HzI" secondAttribute="trailing" constant="8" id="4nE-Eg-z5s"/>
                             <constraint firstItem="jhR-nX-yvH" firstAttribute="leading" secondItem="gmg-tB-bPO" secondAttribute="leading" constant="4" id="Gb4-pH-lgp"/>
                             <constraint firstItem="OrS-8Q-HzI" firstAttribute="leading" secondItem="Dsf-Tp-HpG" secondAttribute="trailing" constant="8" id="L87-bd-D4e"/>
                             <constraint firstAttribute="bottom" secondItem="jhR-nX-yvH" secondAttribute="bottom" constant="4" id="MvD-ZZ-Qas"/>
-                            <constraint firstItem="Dsf-Tp-HpG" firstAttribute="leading" secondItem="jhR-nX-yvH" secondAttribute="trailing" constant="4" id="NFT-k9-97H"/>
                             <constraint firstItem="Dsf-Tp-HpG" firstAttribute="top" secondItem="gmg-tB-bPO" secondAttribute="top" constant="32" id="PWr-wf-7jT"/>
                             <constraint firstItem="jhR-nX-yvH" firstAttribute="top" secondItem="gmg-tB-bPO" secondAttribute="top" constant="4" id="VhN-SS-GdX"/>
                             <constraint firstItem="OrS-8Q-HzI" firstAttribute="top" secondItem="gmg-tB-bPO" secondAttribute="top" constant="15" id="VrP-pq-LTn"/>
