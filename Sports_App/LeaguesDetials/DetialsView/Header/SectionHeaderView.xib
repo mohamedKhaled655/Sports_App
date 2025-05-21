@@ -13,8 +13,14 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XSp-SB-d9j">
+                    <rect key="frame" x="249" y="8" width="59" height="31"/>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEG-wJ-4Rd">
-                    <rect key="frame" x="138.33333333333334" y="13.999999999999998" width="43.333333333333343" height="22.333333333333329"/>
+                    <rect key="frame" x="48" y="7.9999999999999982" width="146" height="22.333333333333329"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="146" id="Fz3-mP-QfL"/>
+                    </constraints>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                     <color key="textColor" red="1" green="0.25098039220000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -23,11 +29,16 @@
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="mEG-wJ-4Rd" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="Gan-jj-u2R"/>
-                <constraint firstItem="mEG-wJ-4Rd" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="mzo-Ea-1rS"/>
+                <constraint firstItem="mEG-wJ-4Rd" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="48" id="CYO-Ic-atU"/>
+                <constraint firstItem="XSp-SB-d9j" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="8" id="OLY-2M-r2V"/>
+                <constraint firstItem="XSp-SB-d9j" firstAttribute="leading" secondItem="mEG-wJ-4Rd" secondAttribute="trailing" constant="55" id="aOA-cX-9oH"/>
+                <constraint firstItem="XSp-SB-d9j" firstAttribute="height" secondItem="U6b-Vx-4bR" secondAttribute="height" multiplier="0.62" id="arO-W2-G9t"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="XSp-SB-d9j" secondAttribute="trailing" constant="12" id="n95-r6-Xga"/>
+                <constraint firstItem="mEG-wJ-4Rd" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="8" id="t0Z-3W-72E"/>
             </constraints>
             <connections>
                 <outlet property="header" destination="mEG-wJ-4Rd" id="diV-ey-aBH"/>
+                <outlet property="icon" destination="XSp-SB-d9j" id="LNC-im-p3a"/>
             </connections>
             <point key="canvasLocation" x="138.93129770992365" y="19.718309859154932"/>
         </collectionReusableView>

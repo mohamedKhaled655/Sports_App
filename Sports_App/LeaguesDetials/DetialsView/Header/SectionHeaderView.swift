@@ -9,6 +9,7 @@ import UIKit
 
 class SectionHeaderView: UICollectionReusableView {
 
+    @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var header: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

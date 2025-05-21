@@ -79,7 +79,7 @@ class LocalDBManager {
         } catch {
             print("Failed to delete league: \(error.localizedDescription)")
         }
-    }
+    } 
     
     func isLeagueExist(leagueKey: Int) -> Bool {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "LeagueEntity")

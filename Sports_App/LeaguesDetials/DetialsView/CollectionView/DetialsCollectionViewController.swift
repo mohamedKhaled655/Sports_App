@@ -9,12 +9,15 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class DetialsCollectionViewController: UICollectionViewController ,DetialsViewProtocol{
+class DetialsCollectionViewController: UICollectionViewController ,DetialsViewProtocol , FavouriteCellProtocol{
+   
+    
 
     var availableSections: [SectionType] = []
     var upcomingFixtures : [FixtureModel] = []
     var latestFixtures : [FixtureModel] = []
     var standingTeams : [TeamStanding] = []
+    var league : LeagueModel?
     var presenter : DetialsPresenter?
     var sportName : String?
     var leaugeId : Int?
@@ -22,12 +25,6 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.register(UINib(nibName: "FixtureCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "fCell")
         collectionView.register(UINib(nibName: "LeaguesTeamCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "tCell")
         collectionView.register(UINib(nibName: "SectionHeaderView", bundle: nil),
@@ -50,15 +47,23 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
                 return self.drawTeam()
             }
         }
+        let rightBarButton = UIBarButtonItem(
+            image: UIImage(systemName: "heart.circle"),
+            style: .plain,
+            target: self,
+            action: #selector(navigationBarButtonTapped)
+        )
+        rightBarButton.tintColor = UIColor(red: 1.0, green: 0.25, blue: 0.0, alpha: 1.0)
+         navigationItem.rightBarButtonItem = rightBarButton
         collectionView.setCollectionViewLayout(layout, animated: true)
-        
+        updateFavButtonIcon()
     }
     //MARK: - draw Section
     func drawUpComingFixture() -> NSCollectionLayoutSection {
-         let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(400), heightDimension: .absolute(250))
+         let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(350), heightDimension: .absolute(200))
          let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
-         let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(400), heightDimension: .absolute(250))
+         let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(350), heightDimension: .absolute(200))
          let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 
         let section = NSCollectionLayoutSection(group: group)
@@ -84,10 +89,10 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
           return section
     }
     func drawTeam() -> NSCollectionLayoutSection {
-         let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(200), heightDimension: .absolute(250))
+         let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(180), heightDimension: .absolute(250))
          let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
-         let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(200), heightDimension: .absolute(250))
+         let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(180), heightDimension: .absolute(250))
          let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 
          let section = NSCollectionLayoutSection(group: group)
@@ -109,8 +114,8 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
         )
         
         // 👇 Place the header *behind* the section items
-        header.zIndex = -2
-        
+        header.zIndex = -1
+        section.contentInsets.top += height
         section.boundarySupplementaryItems = [header]
     }
 
@@ -306,10 +311,13 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
            switch availableSections[indexPath.section] {
            case .upcoming:
                header.header.text = "Upcoming Fixtures"
+               header.icon.image = UIImage(named: "fixtures")
            case .latest:
                header.header.text = "Latest Fixtures"
+               header.icon.image = UIImage(named: "fixtures")
            case .standings:
                header.header.text = "Teams"
+               header.icon.image = UIImage(named: "team")
            }
 
            // Apply font and color styling (optional if not done in XIB)
@@ -329,6 +337,36 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
             vc.sportName = sportName
             navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    //MARK: - handel add to favourite btn
+    @objc func navigationBarButtonTapped() {
+        guard let league = self.league else { return }
+        
+        if LocalDBManager.shared.isLeagueExist(leagueKey: league.league_key ?? 0) {
+            // Remove from favorites
+            LocalDBManager.shared.removeLeague(leagueKey: league.league_key ?? 0)
+            // Update the button icon to unfilled heart
+            navigationItem.rightBarButtonItem?.image = UIImage(systemName: "heart.circle")
+        } else {
+            // Add to favorites
+            addToFav(league)
+            // Update the button icon to filled heart
+            navigationItem.rightBarButtonItem?.image = UIImage(systemName: "heart.circle.fill")
+        }
+    }
+    func addToFav(_ league: LeagueModel) {
+        let saveLeague = League(
+               leagueKey: league.league_key,
+               leagueName: league.league_name,
+               sportName: sportName ?? "football",
+               leagueLogo: league.league_logo ?? "\(sportName ?? " ")"
+           )
+           LocalDBManager.shared.insertLeague(saveLeague)
+    }
+    func updateFavButtonIcon() {
+        guard let league = self.league else { return }
+        let isFav = LocalDBManager.shared.isLeagueExist(leagueKey: league.league_key ?? 0)
+        navigationItem.rightBarButtonItem?.image = UIImage(systemName: isFav ? "heart.circle.fill" : "heart.circle")
     }
 
 }

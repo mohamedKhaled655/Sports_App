@@ -67,7 +67,7 @@ class LeaguesTeamCollectionViewCell: UICollectionViewCell {
     func applyFocusedStyle() {
             self.layer.cornerRadius = 24
             self.layer.masksToBounds = false
-            self.layer.shadowColor = UIColor(red: 1.0, green: 0.25, blue: 0.0, alpha: 1.0).cgColor
+            self.layer.shadowColor = UIColor.gray.cgColor
             self.layer.shadowOpacity = 0.6
             self.layer.shadowOffset = CGSize(width: 0, height: 20)
             self.layer.shadowRadius = 30

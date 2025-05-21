@@ -96,6 +96,7 @@ class LeagueViewController: UIViewController,UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        let detials = self.storyboard?.instantiateViewController(withIdentifier: "DetialsCollectionViewController") as! DetialsCollectionViewController
         let league = isSearching ? filteredLeagues[indexPath.row] : leagues[indexPath.row]
+        detials.league = league
         detials.leaugeId = league.league_key
         detials.sportName = self.selectedSportName
         navigationController?.pushViewController(detials, animated: true)
