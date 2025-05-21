@@ -41,6 +41,13 @@
 		228936B92DD54AED00B00E05 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 228936B82DD54AED00B00E05 /* SDWebImageMapKit */; };
 		228936BC2DD54B3200B00E05 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 228936BB2DD54B3200B00E05 /* Alamofire */; };
 		228936C12DD54B4500B00E05 /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 228936C02DD54B4500B00E05 /* Reachability */; };
+		7B67B5282DDCEDA900E50EBF /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B67B5252DDCEDA900E50EBF /* SplashViewController.swift */; };
+		7B67B52B2DDCEF5800E50EBF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 7B67B52A2DDCEF5800E50EBF /* Lottie */; };
+		7B67B5342DDD073400E50EBF /* cricket.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B67B5302DDD073400E50EBF /* cricket.json */; };
+		7B67B5352DDD073400E50EBF /* tennis.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B67B5322DDD073400E50EBF /* tennis.json */; };
+		7B67B5362DDD073400E50EBF /* football.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B67B5312DDD073400E50EBF /* football.json */; };
+		7B67B53C2DDD176700E50EBF /* basketball.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B67B53B2DDD176700E50EBF /* basketball.json */; };
+		7B67B53E2DDD194500E50EBF /* splash-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B67B53D2DDD194500E50EBF /* splash-animation.json */; };
 		7BA668772DD74EAB004DBBC3 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA668762DD74E99004DBBC3 /* APIRouter.swift */; };
 		7BA668792DD75E7C004DBBC3 /* FixtureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA668782DD75E5E004DBBC3 /* FixtureResponse.swift */; };
 		7BA6687B2DD75EB0004DBBC3 /* FixtureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA6687A2DD75EA6004DBBC3 /* FixtureModel.swift */; };
@@ -105,6 +112,12 @@
 		228936AA2DD54A7B00B00E05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		228936AD2DD54A7B00B00E05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		228936AF2DD54A7B00B00E05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B67B5252DDCEDA900E50EBF /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		7B67B5302DDD073400E50EBF /* cricket.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = cricket.json; sourceTree = "<group>"; };
+		7B67B5312DDD073400E50EBF /* football.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = football.json; sourceTree = "<group>"; };
+		7B67B5322DDD073400E50EBF /* tennis.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tennis.json; sourceTree = "<group>"; };
+		7B67B53B2DDD176700E50EBF /* basketball.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = basketball.json; sourceTree = "<group>"; };
+		7B67B53D2DDD194500E50EBF /* splash-animation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "splash-animation.json"; sourceTree = "<group>"; };
 		7BA668762DD74E99004DBBC3 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		7BA668782DD75E5E004DBBC3 /* FixtureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureResponse.swift; sourceTree = "<group>"; };
 		7BA6687A2DD75EA6004DBBC3 /* FixtureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixtureModel.swift; sourceTree = "<group>"; };
@@ -141,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B67B52B2DDCEF5800E50EBF /* Lottie in Frameworks */,
 				228936BC2DD54B3200B00E05 /* Alamofire in Frameworks */,
 				228936C12DD54B4500B00E05 /* Reachability in Frameworks */,
 				228936B92DD54AED00B00E05 /* SDWebImageMapKit in Frameworks */,
@@ -332,21 +346,43 @@
 		2289369D2DD54A7800B00E05 /* Sports_App */ = {
 			isa = PBXGroup;
 			children = (
+				7B67B5202DDCEC7300E50EBF /* LaunchScreen */,
 				228511342DDB9C5C0061FA1F /* Team */,
 				228510D22DDB04D00061FA1F /* Favourites */,
 				7BA6687C2DD76171004DBBC3 /* LeaguesDetials */,
 				2282E1BD2DD6836100858AD9 /* Home */,
 				2284FEA52DD63A75005596BE /* Leagues */,
 				2284FE9C2DD62C86005596BE /* Model */,
-				2289369E2DD54A7800B00E05 /* AppDelegate.swift */,
+				7B67B52E2DDD05DC00E50EBF /* Animations */,
 				228936A02DD54A7800B00E05 /* SceneDelegate.swift */,
+				2289369E2DD54A7800B00E05 /* AppDelegate.swift */,
+				228936AC2DD54A7B00B00E05 /* LaunchScreen.storyboard */,
 				228936A42DD54A7800B00E05 /* Main.storyboard */,
 				228936AA2DD54A7B00B00E05 /* Assets.xcassets */,
-				228936AC2DD54A7B00B00E05 /* LaunchScreen.storyboard */,
 				228936AF2DD54A7B00B00E05 /* Info.plist */,
 				228936A72DD54A7800B00E05 /* Sports_App.xcdatamodeld */,
 			);
 			path = Sports_App;
+			sourceTree = "<group>";
+		};
+		7B67B5202DDCEC7300E50EBF /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				7B67B5252DDCEDA900E50EBF /* SplashViewController.swift */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		7B67B52E2DDD05DC00E50EBF /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				7B67B5302DDD073400E50EBF /* cricket.json */,
+				7B67B5312DDD073400E50EBF /* football.json */,
+				7B67B5322DDD073400E50EBF /* tennis.json */,
+				7B67B53B2DDD176700E50EBF /* basketball.json */,
+				7B67B53D2DDD194500E50EBF /* splash-animation.json */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		7BA6687C2DD76171004DBBC3 /* LeaguesDetials */ = {
@@ -487,6 +523,7 @@
 				228936B82DD54AED00B00E05 /* SDWebImageMapKit */,
 				228936BB2DD54B3200B00E05 /* Alamofire */,
 				228936C02DD54B4500B00E05 /* Reachability */,
+				7B67B52A2DDCEF5800E50EBF /* Lottie */,
 			);
 			productName = Sports_App;
 			productReference = 2289369B2DD54A7800B00E05 /* Sports_App.app */;
@@ -520,6 +557,7 @@
 				228936B52DD54AED00B00E05 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				228936BA2DD54B3200B00E05 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				228936BF2DD54B4500B00E05 /* XCRemoteSwiftPackageReference "Reachability" */,
+				7B67B5292DDCEF5800E50EBF /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 2289369C2DD54A7800B00E05 /* Products */;
 			projectDirPath = "";
@@ -536,10 +574,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BA668862DD76BDE004DBBC3 /* DetialsCollectionViewController.xib in Resources */,
+				7B67B5342DDD073400E50EBF /* cricket.json in Resources */,
+				7B67B53E2DDD194500E50EBF /* splash-animation.json in Resources */,
+				7B67B5352DDD073400E50EBF /* tennis.json in Resources */,
+				7B67B5362DDD073400E50EBF /* football.json in Resources */,
 				2285113B2DDB9CAB0061FA1F /* TeamViewController.xib in Resources */,
 				228936AE2DD54A7B00B00E05 /* LaunchScreen.storyboard in Resources */,
 				228936AB2DD54A7B00B00E05 /* Assets.xcassets in Resources */,
 				2284FEB12DD63DA3005596BE /* LeagueTableViewCell.xib in Resources */,
+				7B67B53C2DDD176700E50EBF /* basketball.json in Resources */,
 				228510DB2DDB054A0061FA1F /* FavouritesViewController.xib in Resources */,
 				7BA668CB2DD9134E004DBBC3 /* FixtureCollectionViewCell.xib in Resources */,
 				22842B9D2DDCC4B600262BA5 /* PlayerTableViewCell.xib in Resources */,
@@ -599,6 +642,7 @@
 				7BA668C12DD8E115004DBBC3 /* StandingRequestParams.swift in Sources */,
 				7BA668852DD76BDE004DBBC3 /* DetialsCollectionViewController.swift in Sources */,
 				228510DD2DDB05670061FA1F /* FavouriteCellProtocol.swift in Sources */,
+				7B67B5282DDCEDA900E50EBF /* SplashViewController.swift in Sources */,
 				2284FEA22DD6388C005596BE /* LeagueResponse.swift in Sources */,
 				2284FEAA2DD63AEE005596BE /* LeagueViewController.swift in Sources */,
 				7BA668792DD75E7C004DBBC3 /* FixtureResponse.swift in Sources */,
@@ -758,7 +802,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Sports_App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -785,7 +829,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Sports_App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -850,6 +894,14 @@
 				kind = branch;
 			};
 		};
+		7B67B5292DDCEF5800E50EBF /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -872,6 +924,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 228936BF2DD54B4500B00E05 /* XCRemoteSwiftPackageReference "Reachability" */;
 			productName = Reachability;
+		};
+		7B67B52A2DDCEF5800E50EBF /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B67B5292DDCEF5800E50EBF /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 

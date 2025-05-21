@@ -1,61 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Yaa-6w-adj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uQF-WG-xst">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sports_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PVI-Ak-Xyo">
-                                <rect key="frame" x="16" y="119" width="361" height="634"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iqX-AG-8U7">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sport_cell" id="mIo-f5-yYK">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Rp5-OR-iM1">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="PVI-Ak-Xyo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="0NV-j6-bpU"/>
-                            <constraint firstItem="PVI-Ak-Xyo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="65v-zP-OsL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PVI-Ak-Xyo" secondAttribute="bottom" constant="16" id="hov-P6-kfm"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PVI-Ak-Xyo" secondAttribute="trailing" constant="16" id="xZR-DH-LBe"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Home" id="ucF-wi-8ax"/>
-                    <connections>
-                        <outlet property="sportsCollectionView" destination="PVI-Ak-Xyo" id="isW-4Z-4b2"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="657" y="-306"/>
-        </scene>
         <!--Leagues-->
         <scene sceneID="YGM-LQ-eTO">
             <objects>
@@ -65,37 +18,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CUQ-pz-e1v">
-                                <rect key="frame" x="0.0" y="75" width="393" height="727"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="174" width="393" height="594"/>
+                                <color key="backgroundColor" name="MyWhite"/>
+                                <color key="separatorColor" name="MyWhite"/>
+                                <color key="sectionIndexBackgroundColor" name="MyWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="CdG-7R-yK9">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="47.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CdG-7R-yK9" id="tx2-43-jko">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="47.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ZbI-y6-gXR">
+                                <rect key="frame" x="0.0" y="118" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="kXq-Mf-ttV" id="haP-YO-yqE"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Eo0-85-2eF"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="MyWhite"/>
                         <constraints>
                             <constraint firstItem="Eo0-85-2eF" firstAttribute="trailing" secondItem="CUQ-pz-e1v" secondAttribute="trailing" id="4y2-ny-3Yn"/>
+                            <constraint firstItem="CUQ-pz-e1v" firstAttribute="top" secondItem="ZbI-y6-gXR" secondAttribute="bottom" id="HpI-cn-Von"/>
                             <constraint firstItem="Eo0-85-2eF" firstAttribute="bottom" secondItem="CUQ-pz-e1v" secondAttribute="bottom" constant="16" id="Pya-9f-VMC"/>
-                            <constraint firstItem="CUQ-pz-e1v" firstAttribute="top" secondItem="Eo0-85-2eF" secondAttribute="top" constant="16" id="Sf3-BK-BP7"/>
+                            <constraint firstItem="ZbI-y6-gXR" firstAttribute="top" secondItem="Eo0-85-2eF" secondAttribute="top" id="lCd-3h-3GB"/>
                             <constraint firstItem="CUQ-pz-e1v" firstAttribute="leading" secondItem="Eo0-85-2eF" secondAttribute="leading" id="lDD-Z6-gjh"/>
+                            <constraint firstItem="ZbI-y6-gXR" firstAttribute="trailing" secondItem="Eo0-85-2eF" secondAttribute="trailing" id="sBi-Rp-yjY"/>
+                            <constraint firstItem="ZbI-y6-gXR" firstAttribute="leading" secondItem="Eo0-85-2eF" secondAttribute="leading" id="saz-ol-XDA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Leagues" id="jdn-3h-ijR"/>
                     <connections>
                         <outlet property="leaguesTable" destination="CUQ-pz-e1v" id="gyw-sz-DqN"/>
+                        <outlet property="searchBar" destination="ZbI-y6-gXR" id="WgZ-YG-d1f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0U-8v-79A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1480" y="-306"/>
+            <point key="canvasLocation" x="2457.2519083969464" y="-306.33802816901408"/>
         </scene>
         <!--Detials Collection View Controller-->
         <scene sceneID="xSv-Z4-TlW">
@@ -104,7 +70,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="nhs-JM-q0Q">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="MyWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DZn-x1-vK2">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -120,7 +86,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wTD-wY-swH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2294" y="-306"/>
+            <point key="canvasLocation" x="3220.6106870229005" y="-306.33802816901408"/>
         </scene>
         <!--Team View Controller-->
         <scene sceneID="Nii-y2-iaY">
@@ -131,14 +97,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Sh1-Xq-E1Z">
-                                <rect key="frame" x="0.0" y="85" width="393" height="685"/>
+                                <rect key="frame" x="0.0" y="144" width="393" height="592"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="r8x-Yz-oVm">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="47.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r8x-Yz-oVm" id="0eW-Rr-RCa">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="47.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -160,16 +126,52 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kJS-Yu-PrW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3029.770992366412" y="-306.33802816901408"/>
+            <point key="canvasLocation" x="3956.4885496183206" y="-306.33802816901408"/>
+        </scene>
+        <!--Splash View Controller-->
+        <scene sceneID="khq-FJ-lRV">
+            <objects>
+                <viewController storyboardIdentifier="SplashViewController" id="uQF-WG-xst" customClass="SplashViewController" customModule="Sports_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RwW-4y-T4p">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cmh-eT-pol" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="36" y="129" width="321" height="594"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="splash-animation"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qax-UB-fGS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qax-UB-fGS" firstAttribute="bottom" secondItem="cmh-eT-pol" secondAttribute="bottom" constant="61" id="Dya-j4-YfP"/>
+                            <constraint firstItem="cmh-eT-pol" firstAttribute="top" secondItem="qax-UB-fGS" secondAttribute="top" constant="11" id="FCe-Eh-5Fa"/>
+                            <constraint firstItem="cmh-eT-pol" firstAttribute="leading" secondItem="qax-UB-fGS" secondAttribute="leading" constant="36" id="QMR-PR-TZn"/>
+                            <constraint firstItem="qax-UB-fGS" firstAttribute="trailing" secondItem="cmh-eT-pol" secondAttribute="trailing" constant="36" id="bog-b3-ut1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="MbG-vU-4dK"/>
+                    <connections>
+                        <outlet property="animationview" destination="cmh-eT-pol" id="YsU-sF-gSa"/>
+                        <segue destination="Yaa-6w-adj" kind="custom" id="gP3-T4-hbC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LlH-Pv-ggb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1692.3664122137404" y="4.9295774647887329"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hfM-EM-LiX">
             <objects>
-                <tabBarController id="Yaa-6w-adj" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="HomeTabBar" id="Yaa-6w-adj" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NjG-Zg-iPc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="1" green="0.25098039215686274" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="2lb-Dc-3SI" kind="relationship" relationship="viewControllers" id="RWt-N0-zku"/>
@@ -178,7 +180,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6oV-kx-kNS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1763" y="5"/>
+            <point key="canvasLocation" x="-837.40458015267177" y="4.9295774647887329"/>
         </scene>
         <!--Sports-->
         <scene sceneID="b45-Jz-mdU">
@@ -188,17 +190,17 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="EDg-kF-Lfp"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RX1-v6-4tw">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="3VB-Ku-847"/>
+                        <segue destination="c0k-53-6RB" kind="relationship" relationship="rootViewController" id="IpW-yd-f9K"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HCB-dS-LYo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-457" y="-306"/>
+            <point key="canvasLocation" x="469.46564885496178" y="-306.33802816901408"/>
         </scene>
         <!--Favourites-->
         <scene sceneID="WmF-VV-BwZ">
@@ -209,14 +211,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hTb-4x-iK8">
-                                <rect key="frame" x="0.0" y="119" width="393" height="690"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="178" width="393" height="631"/>
+                                <color key="backgroundColor" name="MyWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="VXt-0F-UJl">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="47.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VXt-0F-UJl" id="E2H-iu-3Ch">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="47.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -224,7 +226,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1IC-Oq-EKh"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="MyWhite"/>
                         <constraints>
                             <constraint firstItem="hTb-4x-iK8" firstAttribute="leading" secondItem="1IC-Oq-EKh" secondAttribute="leading" id="HvF-MG-xDR"/>
                             <constraint firstItem="hTb-4x-iK8" firstAttribute="top" secondItem="1IC-Oq-EKh" secondAttribute="top" constant="16" id="OhD-jv-A1N"/>
@@ -239,7 +241,145 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eP3-rw-yVU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="510.68702290076334" y="442.95774647887328"/>
+            <point key="canvasLocation" x="1437.4045801526718" y="442.95774647887328"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Vaq-EX-9cq">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="c0k-53-6RB" customClass="ViewController" customModule="Sports_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pwd-Ue-oDb">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Zjo-6u-vZc">
+                                <rect key="frame" x="24" y="210" width="345" height="477"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mtl-jJ-5p9">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="238.66666666666666"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNL-Rl-Iuz" customClass="LottieAnimationView" customModule="Lottie">
+                                                <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="238.66666666666666"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FootBall" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXR-YJ-ibB">
+                                                        <rect key="frame" x="0.0" y="200" width="172.66666666666666" height="38.666666666666657"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                        <color key="textColor" name="PrimaryColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" name="MyWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="iXR-YJ-ibB" firstAttribute="leading" secondItem="qNL-Rl-Iuz" secondAttribute="leading" id="Anu-dG-5JA"/>
+                                                    <constraint firstItem="iXR-YJ-ibB" firstAttribute="top" secondItem="qNL-Rl-Iuz" secondAttribute="top" constant="200" id="JQm-SK-8C4"/>
+                                                    <constraint firstAttribute="bottom" secondItem="iXR-YJ-ibB" secondAttribute="bottom" id="Mcj-Zf-uvS"/>
+                                                    <constraint firstAttribute="trailing" secondItem="iXR-YJ-ibB" secondAttribute="trailing" id="btb-ZT-jdO"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="football"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRu-Y2-EMY" customClass="LottieAnimationView" customModule="Lottie">
+                                                <rect key="frame" x="172.66666666666663" y="0.0" width="172.33333333333337" height="238.66666666666666"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BasketBall" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qU-UQ-9Ls">
+                                                        <rect key="frame" x="0.0" y="200" width="172.33333333333334" height="38.666666666666657"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                        <color key="textColor" name="PrimaryColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="6qU-UQ-9Ls" secondAttribute="bottom" id="IMR-S1-mB9"/>
+                                                    <constraint firstItem="6qU-UQ-9Ls" firstAttribute="leading" secondItem="TRu-Y2-EMY" secondAttribute="leading" id="QOb-ab-G9m"/>
+                                                    <constraint firstItem="6qU-UQ-9Ls" firstAttribute="top" secondItem="TRu-Y2-EMY" secondAttribute="top" constant="200" id="Vk8-zd-doi"/>
+                                                    <constraint firstAttribute="trailing" secondItem="6qU-UQ-9Ls" secondAttribute="trailing" id="kv9-iO-vRG"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="basketball"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="TRu-Y2-EMY" firstAttribute="width" secondItem="mtl-jJ-5p9" secondAttribute="width" multiplier="0.5" id="lg3-KD-CVB"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9aF-Sl-l0W">
+                                        <rect key="frame" x="0.0" y="238.66666666666669" width="345" height="238.33333333333331"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uz5-ia-p1I" customClass="LottieAnimationView" customModule="Lottie">
+                                                <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="238.33333333333334"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cricket" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q89-gE-Clh">
+                                                        <rect key="frame" x="0.0" y="199.99999999999994" width="172.66666666666666" height="38.333333333333343"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                        <color key="textColor" name="PrimaryColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="q89-gE-Clh" firstAttribute="top" secondItem="Uz5-ia-p1I" secondAttribute="top" constant="200" id="9dW-fS-ERJ"/>
+                                                    <constraint firstItem="q89-gE-Clh" firstAttribute="leading" secondItem="Uz5-ia-p1I" secondAttribute="leading" id="C3a-NL-gAq"/>
+                                                    <constraint firstAttribute="bottom" secondItem="q89-gE-Clh" secondAttribute="bottom" id="Z2X-nx-Udj"/>
+                                                    <constraint firstAttribute="trailing" secondItem="q89-gE-Clh" secondAttribute="trailing" id="zi4-2K-KUL"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="cricket"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KxZ-kH-Ypq" customClass="LottieAnimationView" customModule="Lottie">
+                                                <rect key="frame" x="172.66666666666663" y="0.0" width="172.33333333333337" height="238.33333333333334"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tennis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAs-jX-QIO">
+                                                        <rect key="frame" x="0.0" y="199.99999999999994" width="172.33333333333334" height="38.333333333333343"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                        <color key="textColor" name="PrimaryColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="uAs-jX-QIO" firstAttribute="top" secondItem="KxZ-kH-Ypq" secondAttribute="top" constant="200" id="dNE-aQ-m2l"/>
+                                                    <constraint firstAttribute="trailing" secondItem="uAs-jX-QIO" secondAttribute="trailing" id="kZh-N5-4tK"/>
+                                                    <constraint firstAttribute="bottom" secondItem="uAs-jX-QIO" secondAttribute="bottom" id="lsU-6G-VKs"/>
+                                                    <constraint firstItem="uAs-jX-QIO" firstAttribute="leading" secondItem="KxZ-kH-Ypq" secondAttribute="leading" id="oVF-KL-x9S"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="tennis"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="KxZ-kH-Ypq" firstAttribute="width" secondItem="9aF-Sl-l0W" secondAttribute="width" multiplier="0.5" id="TvO-SL-tLe"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="mtl-jJ-5p9" firstAttribute="height" secondItem="Zjo-6u-vZc" secondAttribute="height" multiplier="0.5" id="iBh-C6-H8H"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tCF-nn-AlG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tCF-nn-AlG" firstAttribute="bottom" secondItem="Zjo-6u-vZc" secondAttribute="bottom" constant="48" id="8cU-x8-52l"/>
+                            <constraint firstItem="tCF-nn-AlG" firstAttribute="trailing" secondItem="Zjo-6u-vZc" secondAttribute="trailing" constant="24" id="A22-tX-sHS"/>
+                            <constraint firstItem="Zjo-6u-vZc" firstAttribute="top" secondItem="tCF-nn-AlG" secondAttribute="top" constant="48" id="GJx-yu-wQo"/>
+                            <constraint firstItem="Zjo-6u-vZc" firstAttribute="leading" secondItem="tCF-nn-AlG" secondAttribute="leading" constant="24" id="RvJ-NY-PET"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="do8-jQ-NLh"/>
+                    <connections>
+                        <outlet property="basketball" destination="TRu-Y2-EMY" id="cTK-1J-YbP"/>
+                        <outlet property="cricket" destination="Uz5-ia-p1I" id="QXC-fw-hr4"/>
+                        <outlet property="football" destination="qNL-Rl-Iuz" id="2gR-4e-qEH"/>
+                        <outlet property="tennis" destination="KxZ-kH-Ypq" id="AEc-GN-O7m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VZq-JY-h0M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1510.6870229007634" y="-306.33802816901408"/>
         </scene>
         <!--Favourites-->
         <scene sceneID="G10-cg-ZI9">
@@ -248,7 +388,7 @@
                     <tabBarItem key="tabBarItem" title="Favourites" image="heart.fill" catalog="system" id="kmL-Fd-ma3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gEx-V7-faM">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -258,12 +398,18 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7nn-8y-IkX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-416.03053435114504" y="442.95774647887328"/>
+            <point key="canvasLocation" x="510.68702290076334" y="442.95774647887328"/>
         </scene>
     </scenes>
     <resources>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
+        <namedColor name="MyWhite">
+            <color red="0.99999994039535522" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryColor">
+            <color red="1" green="0.25098039215686274" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

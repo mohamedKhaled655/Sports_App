@@ -21,8 +21,14 @@ struct FixturesRquestParams: URLRequestParams {
     func asDictionary(API_KEY apiKey: String) -> [String : Any] {
         var dictionary: [String: Any] = [:]
         dictionary["APIkey"] = apiKey
-        if let leagureId {
-            dictionary["leagueId"] = leagureId
+        if sportType == .tennis {
+            if let leagureId {
+                dictionary["league_key"] = leagureId
+            }
+        }else{
+            if let leagureId {
+                dictionary["leagueId"] = leagureId
+            }
         }
         dictionary["met"] = SportsMethodType.Fixtures.rawValue
         dictionary["from"] = dateFrom
