@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CUQ-pz-e1v">
-                                <rect key="frame" x="0.0" y="134" width="393" height="634"/>
+                                <rect key="frame" x="0.0" y="174" width="393" height="594"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="CdG-7R-yK9">
@@ -30,19 +30,30 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ZbI-y6-gXR">
+                                <rect key="frame" x="0.0" y="118" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="kXq-Mf-ttV" id="haP-YO-yqE"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Eo0-85-2eF"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Eo0-85-2eF" firstAttribute="trailing" secondItem="CUQ-pz-e1v" secondAttribute="trailing" id="4y2-ny-3Yn"/>
+                            <constraint firstItem="CUQ-pz-e1v" firstAttribute="top" secondItem="ZbI-y6-gXR" secondAttribute="bottom" id="HpI-cn-Von"/>
                             <constraint firstItem="Eo0-85-2eF" firstAttribute="bottom" secondItem="CUQ-pz-e1v" secondAttribute="bottom" constant="16" id="Pya-9f-VMC"/>
-                            <constraint firstItem="CUQ-pz-e1v" firstAttribute="top" secondItem="Eo0-85-2eF" secondAttribute="top" constant="16" id="Sf3-BK-BP7"/>
+                            <constraint firstItem="ZbI-y6-gXR" firstAttribute="top" secondItem="Eo0-85-2eF" secondAttribute="top" id="lCd-3h-3GB"/>
                             <constraint firstItem="CUQ-pz-e1v" firstAttribute="leading" secondItem="Eo0-85-2eF" secondAttribute="leading" id="lDD-Z6-gjh"/>
+                            <constraint firstItem="ZbI-y6-gXR" firstAttribute="trailing" secondItem="Eo0-85-2eF" secondAttribute="trailing" id="sBi-Rp-yjY"/>
+                            <constraint firstItem="ZbI-y6-gXR" firstAttribute="leading" secondItem="Eo0-85-2eF" secondAttribute="leading" id="saz-ol-XDA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Leagues" id="jdn-3h-ijR"/>
                     <connections>
                         <outlet property="leaguesTable" destination="CUQ-pz-e1v" id="gyw-sz-DqN"/>
+                        <outlet property="searchBar" destination="ZbI-y6-gXR" id="WgZ-YG-d1f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0U-8v-79A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -245,14 +256,42 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNL-Rl-Iuz" customClass="LottieAnimationView" customModule="Lottie">
                                                 <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="238.66666666666666"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FootBall" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXR-YJ-ibB">
+                                                        <rect key="frame" x="0.0" y="200" width="172.66666666666666" height="38.666666666666657"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                        <color key="textColor" red="1" green="0.25098039220000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="iXR-YJ-ibB" firstAttribute="leading" secondItem="qNL-Rl-Iuz" secondAttribute="leading" id="Anu-dG-5JA"/>
+                                                    <constraint firstItem="iXR-YJ-ibB" firstAttribute="top" secondItem="qNL-Rl-Iuz" secondAttribute="top" constant="200" id="JQm-SK-8C4"/>
+                                                    <constraint firstAttribute="bottom" secondItem="iXR-YJ-ibB" secondAttribute="bottom" id="Mcj-Zf-uvS"/>
+                                                    <constraint firstAttribute="trailing" secondItem="iXR-YJ-ibB" secondAttribute="trailing" id="btb-ZT-jdO"/>
+                                                </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="football"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRu-Y2-EMY" customClass="LottieAnimationView" customModule="Lottie">
                                                 <rect key="frame" x="172.66666666666663" y="0.0" width="172.33333333333337" height="238.66666666666666"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BasketBall" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qU-UQ-9Ls">
+                                                        <rect key="frame" x="0.0" y="200" width="172.33333333333334" height="38.666666666666657"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                        <color key="textColor" red="1" green="0.25098039220000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="6qU-UQ-9Ls" secondAttribute="bottom" id="IMR-S1-mB9"/>
+                                                    <constraint firstItem="6qU-UQ-9Ls" firstAttribute="leading" secondItem="TRu-Y2-EMY" secondAttribute="leading" id="QOb-ab-G9m"/>
+                                                    <constraint firstItem="6qU-UQ-9Ls" firstAttribute="top" secondItem="TRu-Y2-EMY" secondAttribute="top" constant="200" id="Vk8-zd-doi"/>
+                                                    <constraint firstAttribute="trailing" secondItem="6qU-UQ-9Ls" secondAttribute="trailing" id="kv9-iO-vRG"/>
+                                                </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="basketball"/>
                                                 </userDefinedRuntimeAttributes>
@@ -267,14 +306,42 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uz5-ia-p1I" customClass="LottieAnimationView" customModule="Lottie">
                                                 <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="238.33333333333334"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cricket" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q89-gE-Clh">
+                                                        <rect key="frame" x="0.0" y="199.99999999999994" width="172.66666666666666" height="38.333333333333343"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                        <color key="textColor" red="1" green="0.25098039220000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="q89-gE-Clh" firstAttribute="top" secondItem="Uz5-ia-p1I" secondAttribute="top" constant="200" id="9dW-fS-ERJ"/>
+                                                    <constraint firstItem="q89-gE-Clh" firstAttribute="leading" secondItem="Uz5-ia-p1I" secondAttribute="leading" id="C3a-NL-gAq"/>
+                                                    <constraint firstAttribute="bottom" secondItem="q89-gE-Clh" secondAttribute="bottom" id="Z2X-nx-Udj"/>
+                                                    <constraint firstAttribute="trailing" secondItem="q89-gE-Clh" secondAttribute="trailing" id="zi4-2K-KUL"/>
+                                                </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="cricket"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KxZ-kH-Ypq" customClass="LottieAnimationView" customModule="Lottie">
                                                 <rect key="frame" x="172.66666666666663" y="0.0" width="172.33333333333337" height="238.33333333333334"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tennis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAs-jX-QIO">
+                                                        <rect key="frame" x="0.0" y="199.99999999999994" width="172.33333333333334" height="38.333333333333343"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                        <color key="textColor" red="1" green="0.25098039220000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="uAs-jX-QIO" firstAttribute="top" secondItem="KxZ-kH-Ypq" secondAttribute="top" constant="200" id="dNE-aQ-m2l"/>
+                                                    <constraint firstAttribute="trailing" secondItem="uAs-jX-QIO" secondAttribute="trailing" id="kZh-N5-4tK"/>
+                                                    <constraint firstAttribute="bottom" secondItem="uAs-jX-QIO" secondAttribute="bottom" id="lsU-6G-VKs"/>
+                                                    <constraint firstItem="uAs-jX-QIO" firstAttribute="leading" secondItem="KxZ-kH-Ypq" secondAttribute="leading" id="oVF-KL-x9S"/>
+                                                </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="tennis"/>
                                                 </userDefinedRuntimeAttributes>
@@ -309,7 +376,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VZq-JY-h0M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1511" y="-306"/>
+            <point key="canvasLocation" x="1510.6870229007634" y="-306.33802816901408"/>
         </scene>
         <!--Favourites-->
         <scene sceneID="G10-cg-ZI9">
