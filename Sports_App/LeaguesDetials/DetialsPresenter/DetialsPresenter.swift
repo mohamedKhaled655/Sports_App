@@ -21,7 +21,7 @@ class DetialsPresenter {
         let params = FixturesRquestParams(
             sportType: sportType,
             dateFrom: DateUtils.getStartDateString(),
-            dateTo: DateUtils.getEndDateString(value: 14),
+            dateTo: DateUtils.getEndDateString(value: 30),
             leagureId: id
         )
         let apiRouter = APIRouter.getFixtures(

@@ -61,10 +61,11 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
          let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(400), heightDimension: .absolute(250))
          let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 
-         let section = NSCollectionLayoutSection(group: group)
-         section.orthogonalScrollingBehavior = .continuous
-         section.interGroupSpacing = 10
-         section.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 12, bottom:12, trailing: 12)
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .groupPagingCentered
+        section.orthogonalScrollingBehavior = .continuous
+        section.interGroupSpacing = 15
+        section.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 8, bottom:12, trailing: 8)
         addHeader(to: section)
          return section
         
@@ -76,9 +77,9 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
         let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(390), heightDimension: .absolute(300))
           let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
 
-          let section = NSCollectionLayoutSection(group: group)
-          section.interGroupSpacing = 5
-          section.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 4, bottom: 2, trailing: 4)
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 5
+        section.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: (UIScreen.main.bounds.width - 390) / 2, bottom: 2, trailing: (UIScreen.main.bounds.width - 390) / 2)
         addHeader(to: section)
           return section
     }
@@ -90,14 +91,15 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
          let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 
          let section = NSCollectionLayoutSection(group: group)
+         section.orthogonalScrollingBehavior = .groupPagingCentered
          section.orthogonalScrollingBehavior = .continuous
-         section.interGroupSpacing = 20
-         section.contentInsets = NSDirectionalEdgeInsets(top: 24, leading: 24, bottom:24, trailing: 24)
+         section.interGroupSpacing = 10
+         section.contentInsets = NSDirectionalEdgeInsets(top: 24, leading: 12, bottom:24, trailing: 24)
         addHeader(to: section)
          return section
         
     }
-    func addHeader(to section: NSCollectionLayoutSection, height: CGFloat = 40) {
+    func addHeader(to section: NSCollectionLayoutSection, height: CGFloat = 50) {
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                 heightDimension: .absolute(height))
         let header = NSCollectionLayoutBoundarySupplementaryItem(
@@ -105,6 +107,10 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
             elementKind: UICollectionView.elementKindSectionHeader,
             alignment: .top
         )
+        
+        // 👇 Place the header *behind* the section items
+        header.zIndex = -2
+        
         section.boundarySupplementaryItems = [header]
     }
 
@@ -180,21 +186,87 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
              return standingTeams.count
          }
     }
+    
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch availableSections[indexPath.section] {
         case .upcoming:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "fCell", for: indexPath) as! FixtureCollectionViewCell
             cell.configureCell(fixture: upcomingFixtures[indexPath.item], sportName: self.sportName)
+            cell.applyFocusedStyle()
             return cell
         case .latest:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "fCell", for: indexPath) as! FixtureCollectionViewCell
             cell.configureCell(fixture: latestFixtures[indexPath.item], sportName: self.sportName)
+            cell.applyNormalStyle()
             return cell
         case .standings:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tCell", for: indexPath) as! LeaguesTeamCollectionViewCell
             cell.configureCell(standingteam: standingTeams[indexPath.item])
+            cell.animatePop()
+            cell.applyFocusedStyle()
             return cell
+        }
+    }
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        switch availableSections[indexPath.section] {
+        case .upcoming:
+            if let fixtureCell = cell as? FixtureCollectionViewCell {
+                fixtureCell.animatePop()
+                fixtureCell.applyPopStyle()
+                fixtureCell.animateZoomIn()
+                fixtureCell.applyFocusedStyle()
+            }
+        case  .latest:
+            if let fixtureCell = cell as? FixtureCollectionViewCell {
+                fixtureCell.animatePop()
+                fixtureCell.applyPopStyle()
+                fixtureCell.animateZoomIn()
+                fixtureCell.applyNormalStyle()
+            }
+        case .standings:
+            if let teamCell = cell as? LeaguesTeamCollectionViewCell {
+                teamCell.animatePop()
+                teamCell.applyPopStyle()
+                teamCell.animateZoomIn()
+                teamCell.applyFocusedStyle()
+                
+            }
+        }
+    }
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard let collectionView = scrollView as? UICollectionView else { return }
+        
+        let visibleCells = collectionView.visibleCells
+        
+        // Center point of the visible area
+        let visibleCenterX = collectionView.bounds.midX + collectionView.contentOffset.x
+        let visibleCenterY = collectionView.bounds.midY + collectionView.contentOffset.y
+        
+        var closestCell: UICollectionViewCell?
+        var smallestDistance: CGFloat = .greatestFiniteMagnitude
+        
+        for cell in visibleCells {
+            guard let indexPath = collectionView.indexPath(for: cell),
+                  let attributes = collectionView.layoutAttributesForItem(at: indexPath) else { continue }
+            
+            let cellCenter = attributes.center
+            let dx = cellCenter.x - visibleCenterX
+            let dy = cellCenter.y - visibleCenterY
+            let distance = sqrt(dx * dx + dy * dy)
+            
+            if distance < smallestDistance {
+                smallestDistance = distance
+                closestCell = cell
+            }
+        }
+        
+        for cell in visibleCells {
+            if cell == closestCell {
+                (cell as? FixtureCollectionViewCell)?.applyFocusedStyle()
+            } else {
+                (cell as? FixtureCollectionViewCell)?.applyNormalStyle()
+            }
         }
     }
 
@@ -259,36 +331,4 @@ class DetialsCollectionViewController: UICollectionViewController ,DetialsViewPr
         }
     }
 
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-    
 }

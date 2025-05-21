@@ -16,11 +16,12 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEG-wJ-4Rd">
                     <rect key="frame" x="138.33333333333334" y="13.999999999999998" width="43.333333333333343" height="22.333333333333329"/>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                    <color key="textColor" red="1" green="0.8674879808" blue="0.21331402969999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" red="1" green="0.25098039220000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="mEG-wJ-4Rd" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="Gan-jj-u2R"/>
                 <constraint firstItem="mEG-wJ-4Rd" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="mzo-Ea-1rS"/>
