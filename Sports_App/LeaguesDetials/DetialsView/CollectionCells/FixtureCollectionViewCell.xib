@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,7 +33,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="team1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMQ-D9-K5k">
                                                 <rect key="frame" x="8" y="171.66666666666666" width="89" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" name="DarkColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -59,25 +60,25 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="VS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXG-pi-fkh">
                                                 <rect key="frame" x="0.0" y="25" width="140" height="25.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="21"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" name="DarkColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="timeing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMe-On-pa2">
                                                 <rect key="frame" x="0.0" y="117.99999999999999" width="140" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" name="DarkColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36j-df-2e8">
                                                 <rect key="frame" x="0.0" y="147" width="140" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" name="DarkColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="FinalScor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wd2-YG-z46">
                                                 <rect key="frame" x="0.0" y="89" width="140" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" name="DarkColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -112,7 +113,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" text="team2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kk-wm-ast">
                                                 <rect key="frame" x="8" y="171.66666666666666" width="89" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" name="DarkColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -160,6 +161,9 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <namedColor name="DarkColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

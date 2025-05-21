@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +19,9 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CUQ-pz-e1v">
                                 <rect key="frame" x="0.0" y="174" width="393" height="594"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="MyWhite"/>
+                                <color key="separatorColor" name="MyWhite"/>
+                                <color key="sectionIndexBackgroundColor" name="MyWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="CdG-7R-yK9">
                                         <rect key="frame" x="0.0" y="50" width="393" height="47.666667938232422"/>
@@ -39,7 +42,7 @@
                             </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Eo0-85-2eF"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="MyWhite"/>
                         <constraints>
                             <constraint firstItem="Eo0-85-2eF" firstAttribute="trailing" secondItem="CUQ-pz-e1v" secondAttribute="trailing" id="4y2-ny-3Yn"/>
                             <constraint firstItem="CUQ-pz-e1v" firstAttribute="top" secondItem="ZbI-y6-gXR" secondAttribute="bottom" id="HpI-cn-Von"/>
@@ -67,7 +70,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="nhs-JM-q0Q">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="MyWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DZn-x1-vK2">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -209,7 +212,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hTb-4x-iK8">
                                 <rect key="frame" x="0.0" y="178" width="393" height="631"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="MyWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="VXt-0F-UJl">
                                         <rect key="frame" x="0.0" y="50" width="393" height="47.666667938232422"/>
@@ -223,7 +226,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1IC-Oq-EKh"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="MyWhite"/>
                         <constraints>
                             <constraint firstItem="hTb-4x-iK8" firstAttribute="leading" secondItem="1IC-Oq-EKh" secondAttribute="leading" id="HvF-MG-xDR"/>
                             <constraint firstItem="hTb-4x-iK8" firstAttribute="top" secondItem="1IC-Oq-EKh" secondAttribute="top" constant="16" id="OhD-jv-A1N"/>
@@ -260,11 +263,11 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FootBall" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXR-YJ-ibB">
                                                         <rect key="frame" x="0.0" y="200" width="172.66666666666666" height="38.666666666666657"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                                        <color key="textColor" red="1" green="0.25098039220000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" name="PrimaryColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" name="MyWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="iXR-YJ-ibB" firstAttribute="leading" secondItem="qNL-Rl-Iuz" secondAttribute="leading" id="Anu-dG-5JA"/>
                                                     <constraint firstItem="iXR-YJ-ibB" firstAttribute="top" secondItem="qNL-Rl-Iuz" secondAttribute="top" constant="200" id="JQm-SK-8C4"/>
@@ -281,7 +284,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BasketBall" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qU-UQ-9Ls">
                                                         <rect key="frame" x="0.0" y="200" width="172.33333333333334" height="38.666666666666657"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                                        <color key="textColor" red="1" green="0.25098039220000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" name="PrimaryColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -310,7 +313,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cricket" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q89-gE-Clh">
                                                         <rect key="frame" x="0.0" y="199.99999999999994" width="172.66666666666666" height="38.333333333333343"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                                        <color key="textColor" red="1" green="0.25098039220000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" name="PrimaryColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -331,7 +334,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tennis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAs-jX-QIO">
                                                         <rect key="frame" x="0.0" y="199.99999999999994" width="172.33333333333334" height="38.333333333333343"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                                        <color key="textColor" red="1" green="0.25098039220000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" name="PrimaryColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -401,6 +404,12 @@
     <resources>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
+        <namedColor name="MyWhite">
+            <color red="0.99999994039535522" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryColor">
+            <color red="1" green="0.25098039215686274" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

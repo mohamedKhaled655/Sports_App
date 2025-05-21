@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,12 +23,12 @@
                         <constraint firstAttribute="width" constant="172" id="Fz3-mP-QfL"/>
                     </constraints>
                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                    <color key="textColor" red="1" green="0.25098039220000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" name="PrimaryColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" name="MyWhite"/>
             <constraints>
                 <constraint firstItem="mEG-wJ-4Rd" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="48" id="CYO-Ic-atU"/>
                 <constraint firstItem="XSp-SB-d9j" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="8" id="OLY-2M-r2V"/>
@@ -43,4 +44,12 @@
             <point key="canvasLocation" x="138.93129770992365" y="19.718309859154932"/>
         </collectionReusableView>
     </objects>
+    <resources>
+        <namedColor name="MyWhite">
+            <color red="0.99999994039535522" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryColor">
+            <color red="1" green="0.25098039215686274" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
