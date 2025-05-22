@@ -25,7 +25,8 @@ class LeagueTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+//        leagueImage.layer.cornerRadius = leagueImage.frame.size.width / 2
+//        leagueImage.clipsToBounds = true
     }
     
     @IBAction func addFavBtn(_ sender: Any) {

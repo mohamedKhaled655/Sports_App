@@ -12,7 +12,7 @@ class SplashViewController: UIViewController {
     
 
     @IBOutlet weak var animationview: LottieAnimationView!
-    
+    let isFirstLaunch = !UserDefaults.standard.bool(forKey: "hasSeenOnboarding")
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,10 +35,16 @@ class SplashViewController: UIViewController {
             
         }
     private func navigateToHome() {
-
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if isFirstLaunch {
+            let onboardingVC = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController")
+            self.view.window?.rootViewController = onboardingVC
+        }else{
             let homeVC = storyboard.instantiateViewController(withIdentifier: "HomeTabBar")
             self.view.window?.rootViewController = homeVC
+        }
+        
+            
     }
 
 }
