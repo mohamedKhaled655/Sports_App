@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  Sports_App
+
+  Created by Noha Ali Gomaa on 23/05/2025.
+  
+*/
+"upcoming_fixtures" = "Upcoming Fixtures";
+"latest_fixtures" = "Latest Fixtures";
+"teams" = "Teams";
+"Goalkeepers" = "Goalkeepers";
+"Defenders"= "Defenders";
+"Midfielders" = "Midfielders";
+"Forwards" = "Forwards";
+"leagues" = "Leagues";
+"football" = "Football";
+"tennis" = "Tennis";
+"basketball" = "Basketball";
+"search_leagues_placeholder" = "Search leagues...";
+
+
+

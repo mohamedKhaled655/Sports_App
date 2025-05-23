@@ -307,32 +307,33 @@ class DetialsCollectionViewController: UICollectionViewController , UICollection
     }
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         guard kind == UICollectionView.elementKindSectionHeader else {
-               return UICollectionReusableView()
-           }
+            return UICollectionReusableView()
+        }
 
-           let header = collectionView.dequeueReusableSupplementaryView(
-               ofKind: kind,
-               withReuseIdentifier: "SectionHeaderView",
-               for: indexPath) as! SectionHeaderView
+        let header = collectionView.dequeueReusableSupplementaryView(
+            ofKind: kind,
+            withReuseIdentifier: "SectionHeaderView",
+            for: indexPath) as! SectionHeaderView
 
-           // Assign title and style
-           switch availableSections[indexPath.section] {
-           case .upcoming:
-               header.header.text = "Upcoming Fixtures"
-               header.icon.image = UIImage(named: "fixtures")
-           case .latest:
-               header.header.text = "Latest Fixtures"
-               header.icon.image = UIImage(named: "fixtures")
-           case .standings:
-               header.header.text = "Teams"
-               header.icon.image = UIImage(named: "team")
-           }
+        // Assign title and style with localization
+        switch availableSections[indexPath.section] {
+        case .upcoming:
+            header.header.text = NSLocalizedString("upcoming_fixtures", comment: "Upcoming fixtures section title")
+            header.icon.image = UIImage(named: "fixtures")
+        case .latest:
+            header.header.text = NSLocalizedString("latest_fixtures", comment: "Latest fixtures section title")
+            header.icon.image = UIImage(named: "fixtures")
+        case .standings:
+            header.header.text = NSLocalizedString("teams", comment: "Teams section title")
+            header.icon.image = UIImage(named: "team")
+        }
 
-           // Apply font and color styling (optional if not done in XIB)
-           header.header.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        // Apply font and color styling (optional if not done in XIB)
+        header.header.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
 
-           return header
-       }
+        return header
+    }
+
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let section = availableSections[indexPath.section]

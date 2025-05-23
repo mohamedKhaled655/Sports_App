@@ -147,8 +147,5 @@ final class NetworkManagerTests: XCTestCase {
         }
 
         waitForExpectations(timeout: 2)
-    }
-
-
- 
+    } 
 }

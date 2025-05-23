@@ -69,7 +69,8 @@ class TeamViewController: UIViewController ,UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return playerTypes[section]
+        return NSLocalizedString(playerTypes[section], comment: "Player type section header")
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

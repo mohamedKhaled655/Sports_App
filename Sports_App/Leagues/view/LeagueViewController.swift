@@ -24,14 +24,19 @@ class LeagueViewController: UIViewController,UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = selectedSportName ?? "Leagues"
+        if let key = selectedSportName {
+            self.title = NSLocalizedString(key, comment: "Selected sport name")
+        } else {
+            self.title = NSLocalizedString("leagues", comment: "Default screen title when no sport is selected")
+        }
         
         leaguesTable.dataSource = self
         leaguesTable.delegate = self
         searchBar.delegate = self
         let cellNib = UINib(nibName: "LeagueTableViewCell", bundle: nil)
         leaguesTable.register(cellNib, forCellReuseIdentifier: "LeagueCell")
-        searchBar.placeholder = "Search leagues..."
+        searchBar.placeholder = NSLocalizedString("search_leagues_placeholder", comment: "Search bar placeholder for leagues")
+
         
         
         leaguesPresenter = LeaguesPresenter(view: self, networkManager: NetworkManager())
