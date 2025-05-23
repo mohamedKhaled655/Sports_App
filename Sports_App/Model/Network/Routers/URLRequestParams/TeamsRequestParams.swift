@@ -20,7 +20,7 @@ struct TeamsRequestParams: URLRequestParams {
         if let leagureId = teamId {
             dictionary["leagueId"] = leagureId
         }
-        dictionary["met"] = SportsMethodType.Standings.rawValue
+        dictionary["met"] = SportsMethodType.Teams.rawValue
         return dictionary
     }
     

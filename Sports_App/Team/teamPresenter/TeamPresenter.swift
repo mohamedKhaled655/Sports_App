@@ -25,13 +25,14 @@ class TeamPresenter {
             params: params
         )
         print("url:\(apiRouter)")
-        networkManager.fetchDataFromApi(endPoint: "\(sportName)/?&met=Teams&teamId=\(teamId)&APIkey=0a986c69d14837fcda0d3c098123b0acd7c7ff340baa1ff5aa50bd828473f990"){ (response: TeamsResponse?) in
-            if let players = response?.result{
+        
+        networkManager.fetch(apiRouter) { (response: TeamsResponse?) in
+            if let players = response?.result {
                 self.view?.showLeagues(players)
-            }else {
+            } else {
                 self.view?.showError("Failed to fetch players.")
             }
-            
         }
+
     }
 }
