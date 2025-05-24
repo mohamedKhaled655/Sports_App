@@ -1,0 +1,44 @@
+
+/* Class = "UILabel"; text = "BasketBall"; ObjectID = "6qU-UQ-9Ls"; */
+"6qU-UQ-9Ls.text" = "BasketBall";
+
+/* Class = "UITabBarItem"; title = "Sports"; ObjectID = "IR3-6p-l9q"; */
+"IR3-6p-l9q.title" = "Sports";
+
+/* Class = "UILabel"; text = "Get real-time scores, stats, and highlights from your favorite teams and leagues"; ObjectID = "Ofk-mC-ceP"; */
+"Ofk-mC-ceP.text" = "Get real-time scores, stats, and highlights from your favorite teams and leagues";
+
+/* Class = "UILabel"; text = "Live Sports Updates"; ObjectID = "Y0D-jE-74v"; */
+"Y0D-jE-74v.text" = "Live Sports Updates";
+
+/* Class = "UIButton"; configuration.title = "Next"; ObjectID = "es6-ZT-rkD"; */
+"es6-ZT-rkD.configuration.title" = "Next";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "es6-ZT-rkD"; */
+"es6-ZT-rkD.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "FootBall"; ObjectID = "iXR-YJ-ibB"; */
+"iXR-YJ-ibB.text" = "FootBall";
+
+/* Class = "UINavigationItem"; title = "Leagues"; ObjectID = "jdn-3h-ijR"; */
+"jdn-3h-ijR.title" = "Leagues";
+
+/* Class = "UITabBarItem"; title = "Favourites"; ObjectID = "kmL-Fd-ma3"; */
+"kmL-Fd-ma3.title" = "Favourites";
+
+/* Class = "UINavigationItem"; title = "Favourites"; ObjectID = "lty-aM-keH"; */
+"lty-aM-keH.title" = "Favourites";
+
+/* Class = "UILabel"; text = "Cricket"; ObjectID = "q89-gE-Clh"; */
+
+
+/* Class = "UILabel"; text = "Tennis"; ObjectID = "uAs-jX-QIO"; */
+
+
+"lty-aM-keH.title" = "المفضلة";
+"IR3-6p-l9q.title" = "الرياضة";
+"kmL-Fd-ma3.title" = "المفضلة";
+"iXR-YJ-ibB.text" = "كرة القدم";
+"6qU-UQ-9Ls.text" = "كرة السلة";
+"q89-gE-Clh.text" = "الكريكيت";
+"uAs-jX-QIO.text" = "التنس";
