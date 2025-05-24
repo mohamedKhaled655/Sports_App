@@ -11,9 +11,4 @@ protocol NetworkProtocol {
         _ requestBuilder: URLRequestConvertible,
         completionHandler: @escaping (T?) -> Void
     )
-    
-//    func fetchDataFromApi<T: Codable>(
-//                endPoint: String,
-//                completionHandler: @escaping (T?) -> Void
-//            )
-}
+    }

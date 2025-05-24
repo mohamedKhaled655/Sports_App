@@ -50,6 +50,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CoW-8I-xmH">
                                 <rect key="frame" x="105" y="0.0" width="140" height="200"/>
@@ -132,6 +133,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hTr-FP-Uud" firstAttribute="width" secondItem="gKe-Vv-h3F" secondAttribute="width" multiplier="0.3" id="BbU-Ft-m3X"/>
                             <constraint firstItem="Fin-BA-yOT" firstAttribute="width" secondItem="gKe-Vv-h3F" secondAttribute="width" multiplier="0.3" id="ctx-EX-qPv"/>

@@ -227,7 +227,6 @@
 		2282E1C22DD6850F00858AD9 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				2282E1C32DD6851F00858AD9 /* SportModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -550,6 +549,7 @@
 			children = (
 				7BA668C82DD9134E004DBBC3 /* FixtureCollectionViewCell.swift */,
 				7BA668C92DD9134E004DBBC3 /* FixtureCollectionViewCell.xib */,
+				2282E1C32DD6851F00858AD9 /* SportModel.swift */,
 				7BA668CC2DD91376004DBBC3 /* LeaguesTeamCollectionViewCell.swift */,
 				7BA668CD2DD91376004DBBC3 /* LeaguesTeamCollectionViewCell.xib */,
 			);

@@ -23,6 +23,7 @@ enum APIRouter: URLRequestBuilder {
     case getTeams(
         params: URLRequestParams
     )
+        
 
     // MARK: - Base URL
     var baseURL: URL {

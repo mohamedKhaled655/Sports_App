@@ -388,7 +388,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="172.66666666666666" height="238.66666666666666"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FootBall" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXR-YJ-ibB">
-                                                        <rect key="frame" x="0.0" y="200" width="172.66666666666666" height="38.666666666666657"/>
+                                                        <rect key="frame" x="4" y="200" width="164.66666666666666" height="34.666666666666657"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                         <color key="textColor" name="PrimaryColor"/>
                                                         <nil key="highlightedColor"/>
@@ -396,10 +396,10 @@
                                                 </subviews>
                                                 <color key="backgroundColor" name="MyWhite"/>
                                                 <constraints>
-                                                    <constraint firstItem="iXR-YJ-ibB" firstAttribute="leading" secondItem="qNL-Rl-Iuz" secondAttribute="leading" id="Anu-dG-5JA"/>
+                                                    <constraint firstItem="iXR-YJ-ibB" firstAttribute="leading" secondItem="qNL-Rl-Iuz" secondAttribute="leading" constant="4" id="Anu-dG-5JA"/>
                                                     <constraint firstItem="iXR-YJ-ibB" firstAttribute="top" secondItem="qNL-Rl-Iuz" secondAttribute="top" constant="200" id="JQm-SK-8C4"/>
-                                                    <constraint firstAttribute="bottom" secondItem="iXR-YJ-ibB" secondAttribute="bottom" id="Mcj-Zf-uvS"/>
-                                                    <constraint firstAttribute="trailing" secondItem="iXR-YJ-ibB" secondAttribute="trailing" id="btb-ZT-jdO"/>
+                                                    <constraint firstAttribute="bottom" secondItem="iXR-YJ-ibB" secondAttribute="bottom" constant="4" id="Mcj-Zf-uvS"/>
+                                                    <constraint firstAttribute="trailing" secondItem="iXR-YJ-ibB" secondAttribute="trailing" constant="4" id="btb-ZT-jdO"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="football"/>

@@ -17,7 +17,7 @@ class NetworkManager: NetworkProtocol {
       }
     func fetch<T>(_ requestBuilder: any Alamofire.URLRequestConvertible, completionHandler: @escaping (T?) -> Void) where T : Decodable, T : Encodable {
         
-        AF.request(requestBuilder).validate().responseData { response in
+        session.request(requestBuilder).validate().responseData { response in
             switch response.result {
             case .success(let data):
                 do {

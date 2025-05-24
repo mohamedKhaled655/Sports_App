@@ -89,10 +89,10 @@ class DetialsCollectionViewController: UICollectionViewController , UICollection
           return section
     }
     func drawTeam() -> NSCollectionLayoutSection {
-         let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(180), heightDimension: .absolute(250))
+         let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(180), heightDimension: .absolute(180))
          let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
-         let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(180), heightDimension: .absolute(250))
+         let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(180), heightDimension: .absolute(180))
          let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 
          let section = NSCollectionLayoutSection(group: group)
